@@ -3,22 +3,32 @@
     <div class="list card">
       <div class="item item-divider">Main Contact</div>
       <div class="item item-body">
-        <input type="text", placeholder="first name" ng-model="app.person.firstname"/>
-        <input type="text", placeholder="last name" ng-model="app.person.lastname"/>
+
+      <label class="item item-input">
+        <span class="input-label">First Name</span>
+        <input type="text" ng-model="app.person.firstname">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Last Name</span>
+        <input type="text" ng-model="app.person.lastname">
+      </label>
 
       <div class="button-bar">
         <a class="button">Male</a>
         <a class="button">Female</a>
         <a class="button">Couple</a>
       </div>
-<label class="item item-input">
-  <span class="input-label">birthday</span>
-  <input type="date" ng-model="app.person.birthday">
-</label>
 
-       <!--  <label for="birthday">birthday</label>
-        <input type="date", placeholder="birthday" ng-model="app.person.birthday"/> -->
-        <input type="text", placeholder="age" ng-model="app.person.age"/>
+      <label class="item item-input">
+        <span class="input-label">Birthday</span>
+        <input type="date" ng-model="app.person.birthday">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Age</span>
+        <input type="text" ng-model="app.person.age">
+      </label>
 
 <!-- TO DO -->
 <!-- <input type="tel", placeholder="tel" ng-model="app.person.tel"> -->
@@ -30,7 +40,12 @@
         </label>
 
 <!-- TO DO -->
-<input type="email", placeholder="email" ng-model="app.person.email"/>
+
+<label class="item item-input">
+  <span class="input-label">Email</span>
+  <input type="email" ng-model="app.person.email">
+</label>
+<!-- <input type="email", placeholder="email" ng-model="app.person.email"/> -->
 
       </div>
     </div>
