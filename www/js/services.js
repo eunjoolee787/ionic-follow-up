@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Chats', function($http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -33,7 +33,8 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return chats;
+      return $http.get("http://localhost:4000/prospects");
+
     },
     remove: function(chat) {
       chats.splice(chats.indexOf(chat), 1);

@@ -19,10 +19,18 @@ angular.module('starter.controllers', [])
 
 
 .controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
+  $scope.prospects = [];
+
+  Chats.all()
+  .success(function (data) {
+    // console.log(data);
+    $scope.prospects = data;
+    return data;
+  })
+  .error(function (error) {
+    console.log(error);
+  });
+
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
