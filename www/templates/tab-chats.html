@@ -1,7 +1,7 @@
 <ion-view view-title="Lists">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="prospect in prospects" type="item-text-wrap" href="#/tab/chats/{{prospect.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="prospect in prospects" type="item-text-wrap" href="#/tab/chats/{{prospect._id}}">
         <!-- <img ng-src="{{chat.face}}"> -->
         <h2>{{prospect.firstnamemale}} {{prospect.lastnamemale}}</h2>
         <p>{{chat.lastText}}</p>

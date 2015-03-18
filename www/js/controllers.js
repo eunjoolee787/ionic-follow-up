@@ -20,10 +20,10 @@ angular.module('starter.controllers', [])
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.prospects = [];
-
+  console.log("tony");
   Chats.all()
   .success(function (data) {
-    // console.log(data);
+    console.log(data);
     $scope.prospects = data;
     return data;
   })
@@ -34,7 +34,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+  $scope.prospect = {};
+  Chats.get($stateParams.chatId)
+  .then(function (response) {
+    $scope.prospect = response.data;
+  })
 })
 
 .controller('AccountCtrl', function($scope) {
