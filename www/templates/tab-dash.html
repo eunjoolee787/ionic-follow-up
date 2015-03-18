@@ -40,53 +40,84 @@
         </label>
 
 <!-- TO DO -->
+    <label class="item item-input">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="app.person.email">
+    </label>
 
-<label class="item item-input">
-  <span class="input-label">Email</span>
-  <input type="email" ng-model="app.person.email">
-</label>
-<!-- <input type="email", placeholder="email" ng-model="app.person.email"/> -->
+  </div>
+</div>
 
-      </div>
+<div class="list card">
+  <div class="item item-divider">Social Media</div>
+  <div class="item item-body">
+    <div>
+      <label class="item item-input">
+        <span class="input-label">Facebook</span>
+        <input type="text" ng-model="app.person.facebook">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Instagram</span>
+        <input type="text" ng-model="app.person.instagram">
+      </label>
     </div>
-
-    <div class="list card">
-      <div class="item item-divider">Social Media</div>
-      <div class="item item-body">
-        <div>
-          <input type="text", placeholder="facebook" ng-model="app.person.facebook"/>
-          <input type="text", placeholder="instagram" ng-model="app.person.instagram"/>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
 
     <div class="list card">
       <div class="item item-divider">General Information</div>
       <div class="item item-body">
       <div>
+
       <label class="item item-input">
-  <span class="input-label">Date</span>
-  <input type="date">
-</label>
-      <!--  <label for="contactdate">Contact Date</label> -->
-        <input type="date", placeholder="contact date" ng-model="app.person.contactdate" ui-date/>
-        <input type="text", placeholder="contact person" ng-model="app.person.contactperson"/>
-        <input type="text", placeholder="name of event" ng-model="app.person.nameofevent"/>
+        <span class="input-label">Contact Date</span>
+        <input type="date" ng-model="app.person.contactdate">
+      </label>
 
-        <input type="text", placeholder="previously saved" ng-model="app.person.previouslysaved"/>
-        <input type="text", placeholder="previously baptized" ng-model="app.person.previouslybaptized"/>
+      <label class="item item-input">
+        <span class="input-label">Contact Person</span>
+        <input type="text" ng-model="app.person.contactperson">
+      </label>
 
-        <input type="text", placeholder="join church" ng-model="app.person.joinchurch"/>
-        <input type="text", placeholder="status" ng-model="app.person.status"/>
+      <label class="item item-input">
+        <span class="input-label">Name of Event</span>
+        <input type="text" ng-model="app.person.nameofevent">
+      </label>
 
-        <label for="last contact date">last contact date</label>
-        <input type="date", placeholder="last contact date" ng-model="app.person.lastcontactdate" ui-date/>
+    <ion-toggle  ng-model="settings.previouslysaved">
+        Previously saved
+    </ion-toggle>
 
-        <label for="created date">created date</label>
-        <input type="date", placeholder="created date" ng-model="app.person.createddate" ui-date/>
+    <ion-toggle  ng-model="settings.previouslybaptized">
+        Previously baptized
+    </ion-toggle>
 
-        <label for="modified date">modified date</label>
-        <input type="date", placeholder="modified date" ng-model="app.person.modifieddate" ui-date/>
+    <ion-toggle  ng-model="settings.joinchurch">
+        Join church
+    </ion-toggle>
+
+      <label class="item item-input">
+        <span class="input-label">Status</span>
+        <input type="text" ng-model="app.person.status">
+      </label>
+
+<!--         <input type="text", placeholder="status" ng-model="app.person.status"/> -->
+
+      <label class="item item-input">
+        <span class="input-label">Last Contact Date</span>
+        <input type="date" ng-model="app.person.astcontactdate">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Created Date</span>
+        <input type="date" ng-model="app.person.createddate">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Modified Date</span>
+        <input type="date" ng-model="app.person.modifieddate">
+      </label>
 
         </div>
       </div>
@@ -95,13 +126,5 @@
       <!-- save button-->
         <input type="button" value="save" ng-click="app.addPerson(app.person)"/>
 
-    <div class="list card">
-      <div class="item item-divider">Phone Number</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>
   </ion-content>
 </ion-view>
