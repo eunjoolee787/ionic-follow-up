@@ -1,6 +1,10 @@
 <ion-view view-title="Lists">
   <ion-content>
     <ion-list>
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search">
+      </label>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="prospect in prospects" type="item-text-wrap" href="#/tab/chats/{{prospect._id}}">
         <!-- <img ng-src="{{chat.face}}"> -->
         <h2>{{prospect.firstnamemale}} {{prospect.lastnamemale}}</h2>
