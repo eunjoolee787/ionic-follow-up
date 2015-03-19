@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list>
 
-    
+
 
 <div class="bar bar-header item-input-inset">
   <label class="item-input-wrapper">
@@ -16,7 +16,8 @@
 
 
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="prospect in prospects" type="item-text-wrap" href="#/tab/chats/{{prospect._id}}">
-        <!-- <img ng-src="{{chat.face}}"> -->
+        <img ng-src="{{chat.face}}">
+        
         <h2>{{prospect.firstname}} {{prospect.lastname}}</h2>
         <h2>{{prospect.lastcontactdate}}</h2>
         <p>{{chat.lastText}}</p>
