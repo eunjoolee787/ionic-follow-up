@@ -4,17 +4,28 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
+<ion-view view-title="Lists Detail">
+<!-- TO DO -->
+<button class="button">Edit</button>
+
 <ion-view view-title="{{prospect.firstnamemale}}">
+
   <ion-content class="padding">
+
+
     <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    
-    <button class="button">Edit</button>
-    <button class="button">Type of Contact</button>
-    <button class="button">Record Decision</button>
-    
     <p>
       {{prospect.firstname}} {{prospect.lastname}}
     </p>
+    
+  <button class="button button-block button-balanced">
+    Type of Contact
+  </button>
+
+  <button class="button button-block button-balanced">
+    Record Decision
+  </button>
+
     <p>
       {{prospect.birthday}}
     </p>
@@ -75,5 +86,9 @@
     <p>
       {{prospect.modifieddate}}
     </p>
+
+    <button class="button button-block button-assertive">
+      Delete
+    </button>
   </ion-content>
 </ion-view>
