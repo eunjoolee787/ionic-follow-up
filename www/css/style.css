@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+
+div.item.item-divider {
+  background-color: #d3d3d3;
+}
+
