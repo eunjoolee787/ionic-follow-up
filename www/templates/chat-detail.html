@@ -7,6 +7,11 @@
 <ion-view view-title="{{prospect.firstnamemale}}">
   <ion-content class="padding">
     <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+    
+    <button class="button">Edit</button>
+    <button class="button">Type of Contact</button>
+    <button class="button">Record Decision</button>
+    
     <p>
       {{prospect.firstname}} {{prospect.lastname}}
     </p>
@@ -70,8 +75,5 @@
     <p>
       {{prospect.modifieddate}}
     </p>
-
-
-    <button class="button">Edit</button>
   </ion-content>
 </ion-view>
