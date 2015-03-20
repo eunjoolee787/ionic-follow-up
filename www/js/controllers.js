@@ -49,6 +49,14 @@ angular.module('starter.controllers', [])
   })
 })
 
+.controller('ChatTypeCtrl', function($scope, $stateParams, Chats) {
+  $scope.prospect = {};
+  Chats.get($stateParams.chatId)
+  .then(function (response) {
+    $scope.prospect = response.data;
+  })
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
