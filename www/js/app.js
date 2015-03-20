@@ -79,6 +79,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('tab.chat-edit', {
+      url: '/chats/:chatId/edit',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-edit.html',
+          controller: 'ChatEditCtrl'
+        }
+      }
+    })
+
   .state('tab.export', {
     url: '/export',
     views: {

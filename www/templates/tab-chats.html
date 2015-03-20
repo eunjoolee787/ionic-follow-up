@@ -16,8 +16,14 @@
 
 
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="prospect in prospects" type="item-text-wrap" href="#/tab/chats/{{prospect._id}}">
+
+      <!-- TO DO -->
         <img ng-src="{{chat.face}}">
         
+        <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+
+
+
         <h2>{{prospect.firstname}} {{prospect.lastname}}</h2>
         <h2>{{prospect.lastcontactdate}}</h2>
         <p>{{chat.lastText}}</p>
