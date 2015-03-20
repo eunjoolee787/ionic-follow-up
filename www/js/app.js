@@ -99,6 +99,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('tab.chat-decision', {
+      url: '/chats/:chatId/decision',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-decision.html',
+          controller: 'ChatDecisionCtrl'
+        }
+      }
+    })
   .state('tab.export', {
     url: '/export',
     views: {
