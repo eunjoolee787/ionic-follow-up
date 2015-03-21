@@ -115,7 +115,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-chats': {
           templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+          controller: 'ChatsCtrl as app'
         }
       }
     })
@@ -124,7 +124,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+          controller: 'ChatDetailCtrl as app'
         }
       }
     })
@@ -134,7 +134,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-edit.html',
-          controller: 'ChatEditCtrl'
+          controller: 'ChatEditCtrl as app'
         }
       }
     })
@@ -144,7 +144,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-type.html',
-          controller: 'ChatTypeCtrl'
+          controller: 'ChatTypeCtrl as app'
         }
       }
     })
@@ -154,7 +154,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-decision.html',
-          controller: 'ChatDecisionCtrl'
+          controller: 'ChatDecisionCtrl as app'
         }
       }
     })
@@ -163,7 +163,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
     views: {
       'tab-export': {
         templateUrl: 'templates/tab-export.html',
-        controller: 'AccountCtrl'
+        controller: 'AccountCtrl as app'
       }
     }
   });

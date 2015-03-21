@@ -52,22 +52,29 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChatTypeCtrl', function($scope, $stateParams, Chats) {
+  var app = this;
+
   $scope.prospect = {};
   Chats.get($stateParams.chatId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
-})
     app.toggle = function () {
     console.log("toggle");
   }
+})
 
 .controller('ChatDecisionCtrl', function($scope, $stateParams, Chats) {
+  var app = this;
+  console.log("work");
   $scope.prospect = {};
   Chats.get($stateParams.chatId)
   .then(function (response) {
     $scope.prospect = response.data;
-  })
+  });
+    app.toggle = function () {
+    console.log("toggle");
+  }
 })
 
 .controller('AccountCtrl', function($scope) {

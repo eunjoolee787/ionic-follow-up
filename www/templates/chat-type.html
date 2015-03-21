@@ -1,26 +1,26 @@
 <ion-view view-title="Type of Contact">
   <ion-content>
     <div class="list">
-      <ion-toggle  ng-model="settings.visit" ng-change="app.toggle()">
+      <ion-toggle  ng-model="app.person.visit" ng-change="app.toggle()">
           Visit
       </ion-toggle>
 
-      <ion-toggle  ng-model="settings.letter" ng-change="app.toggle()">
+      <ion-toggle  ng-model="app.person.letter" ng-change="app.toggle()">
           Letter
       </ion-toggle>
 
-      <ion-toggle  ng-model="settings.visitedchurch" ng-change="app.toggle()">
+      <ion-toggle  ng-model="app.person.visitedchurch" ng-change="app.toggle()">
           Visited church
       </ion-toggle>
 
-      <ion-toggle  ng-model="settings.phonecall" ng-change="app.toggle()">
+      <ion-toggle  ng-model="app.person.phonecall" ng-change="app.toggle()">
           Phone call
       </ion-toggle>
 
-      <ion-toggle  ng-model="settings.email" ng-change="app.toggle()">
+      <ion-toggle  ng-model="app.person.email" ng-change="app.toggle()">
           Email
       </ion-toggle>
-      
+
             <!-- save button-->
         <input type="button" value="save" ng-click="app.addPerson(app.person)"/>
     </div>
