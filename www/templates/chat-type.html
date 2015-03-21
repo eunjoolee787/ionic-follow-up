@@ -1,20 +1,25 @@
 <ion-view view-title="Type of Contact">
   <ion-content>
     <div class="list">
-      <label class="item item-input">
-        <span class="input-label">Username</span>
-        <input type="text">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Password</span>
-        <input type="password">
-      </label>
-      <button class="button button-full button-balanced">
-        Submit
-      </button>
-      <button class="button button-full button-assertive">
-        Log Out
-      </button>
+      <ion-toggle  ng-model="settings.visit">
+          Visit
+      </ion-toggle>
+
+      <ion-toggle  ng-model="settings.letter">
+          Letter
+      </ion-toggle>
+
+      <ion-toggle  ng-model="settings.visitedchurch">
+          Visited church
+      </ion-toggle>
+
+      <ion-toggle  ng-model="settings.phonecall">
+          Phone call
+      </ion-toggle>
+
+      <ion-toggle  ng-model="settings.email">
+          Email
+      </ion-toggle>
     </div>
   </ion-content>
 </ion-view>
