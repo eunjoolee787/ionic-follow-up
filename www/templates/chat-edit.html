@@ -1,149 +1,175 @@
-<ion-view view-title="Edit">
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Lists Detail">
+<!-- TO DO -->
+<!-- <div animate-right class="box">Edit</div>
+<div class="box animate-right-class">Edit</div>
+<div animate="right" class="box">Edit</div> -->
+
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Main Contact</div>
-      <div class="item item-body">
 
-      <label class="item item-input">
-        <span class="input-label">First Name</span>
-        <input type="text" ng-model="prospect.firstname">
-      </label>
+    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+    <p>
+      {{prospect.firstname}} {{prospect.lastname}}
+    </p>
+<button class="button">Edit</button>
+    
+  <button class="button button-block button-balanced">
+    Type of Contact
+  </button>
 
-      <label class="item item-input">
-        <span class="input-label">Last Name</span>
-        <input type="text" ng-model="prospect.lastname">
-      </label>
+  <button class="button button-block button-balanced">
+    Record Decision
+  </button>
 
-      <div class="button-bar">
-        <a class="button button-balanced">Male</a>
-        <a class="button button-balanced">Female</a>
-        <a class="button button-balanced">Couple</a>
-      </div>
-
-      <label class="item item-input">
-        <span class="input-label">Birthday</span>
-        <input type="date" ng-model="prospect.firstnamemale">
-      </label>
-
-      <label class="item item-input">
-        <span class="input-label">Age</span>
-        <input type="text" ng-model="app.person.age">
-      </label>
-
-      <label class="item item-input">
-        <span class="input-label">Telephone</span>
-        <input type="tel" ng-model="app.person.tel">
-      </label>
-
-<!-- TO DO -->
-    <label class="item item-input">
-      <span class="input-label">Email</span>
-      <input type="email" ng-model="app.person.email">
-    </label>
-
-      <label class="item item-input">
-        <span class="input-label">Street</span>
-        <input type="text" ng-model="app.person.street">
-      </label>
-
-      <label class="item item-input">
-        <span class="input-label">City</span>
-        <input type="text" ng-model="app.person.city">
-      </label>
-
-      <label class="item item-input">
-        <span class="input-label">State</span>
-        <input type="text" ng-model="app.person.state">
-      </label>
-
-      <label class="item item-input">
-        <span class="input-label">Zip</span>
-        <input type="text" ng-model="app.person.zip">
-      </label>
-
-<!-- TO DO -->
-<!-- <input type="tel", placeholder="tel" ng-model="app.person.tel"> -->
-
-  </div>
+<div class="item item-input">
+<span class="input-label">Birthday</span>
+    <p>
+      {{prospect.birthday}}
+    </p>
 </div>
 
-<div class="list card">
-  <div class="item item-divider">Social Media</div>
-  <div class="item item-body">
-    <div>
-      <label class="item item-input">
-        <span class="input-label">Facebook</span>
-        <input type="text" ng-model="app.person.facebook">
-      </label>
-
-      <label class="item item-input">
-        <span class="input-label">Instagram</span>
-        <input type="text" ng-model="app.person.instagram">
-      </label>
-    </div>
-  </div>
+<div class="item item-input">
+<span class="input-label">Age</span>   
+    <p>
+      {{prospect.age}}
+    </p>
 </div>
 
-    <div class="list card">
-      <div class="item item-divider">General Information</div>
-      <div class="item item-body">
-      <div>
+<div class="item item-input">
+<span class="input-label">Telephone</span>  
+    <p>
+      {{prospect.tel}}
+    </p>
+</div>
 
-      <label class="item item-input">
-        <span class="input-label">Contact Date</span>
-        <input type="date" ng-model="app.person.contactdate">
-      </label>
+<div class="item item-input">
+<span class="input-label">Email</span>  
+    <p>
+      {{prospect.email}}
+    </p>
+</div>
 
-      <label class="item item-input">
-        <span class="input-label">Contact Person</span>
-        <input type="text" ng-model="app.person.contactperson">
-      </label>
+<div class="item item-input">
+<span class="input-label">Street</span> 
+    <p>
+      {{prospect.street}}
+    </p>
+</div>
 
-      <label class="item item-input">
-        <span class="input-label">Name of Event</span>
-        <input type="text" ng-model="app.person.nameofevent">
-      </label>
+<div class="item item-input">
+<span class="input-label">City</span> 
+    <p>
+      {{prospect.city}}
+    </p>
+</div>
 
-<!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="settings.previouslysaved">
-        Previously saved
-    </ion-toggle>
-<!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="settings.previouslybaptized">
-        Previously baptized
-    </ion-toggle>
-<!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="settings.joinchurch">
-        Join church
-    </ion-toggle>
+<div class="item item-input">
+<span class="input-label">State</span> 
+    <p>
+      {{prospect.state}}
+    </p>
+</div>
 
-      <label class="item item-input">
-        <span class="input-label">Status</span>
-        <input type="text" ng-model="app.person.status">
-      </label>
+<div class="item item-input">
+<span class="input-label">Zip</span> 
+    <p>
+      {{prospect.zip}}
+    </p>
+</div>
 
-<!--         <input type="text", placeholder="status" ng-model="app.person.status"/> -->
+<div class="item item-input">
+<span class="input-label">Facebook</span> 
+    <p>
+      {{prospect.facebook}}
+    </p>
+</div>
 
-      <label class="item item-input">
-        <span class="input-label">Last Contact Date</span>
-        <input type="date" ng-model="app.person.lastcontactdate">
-      </label>
+<div class="item item-input">
+<span class="input-label">Instagram</span> 
+    <p>
+      {{prospect.instagram}}
+    </p>
+</div>
 
-      <label class="item item-input">
-        <span class="input-label">Created Date</span>
-        <input type="date" ng-model="app.person.createddate">
-      </label>
+<div class="item item-input">
+<span class="input-label">Contact Date</span> 
+    <p>
+      {{prospect.contactdate}}
+    </p>
+</div>
 
-      <label class="item item-input">
-        <span class="input-label">Modified Date</span>
-        <input type="date" ng-model="app.person.modifieddate">
-      </label>
-        </div>
-      </div>
-    </div>
-      
-      <!-- save button-->
-        <input type="button" value="save" ng-click="app.addPerson(app.person)"/>
+<div class="item item-input">
+<span class="input-label">Contact Person</span> 
+    <p>
+      {{prospect.contactperson}}
+    </p>
+</div>
 
+<div class="item item-input">
+<span class="input-label">Name of Event</span> 
+    <p>
+      {{prospect.nameofevent}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Previously Saved</span> 
+    <p>
+      {{prospect.previouslysaved}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Previously Baptized</span> 
+    <p>
+      {{prospect.previoslybaptized}}
+    </p>
+</div>
+
+
+<div class="item item-input">
+<span class="input-label">Join Church</span> 
+    <p>
+      {{prospect.joinchurch}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Status</span> 
+    <p>
+      {{prospect.status}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Last Contact Date</span> 
+    <p>
+      {{prospect.lastcontactdate}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Created Date</span> 
+    <p>
+      {{prospect.createddate}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Modified Date</span> 
+    <p>
+      {{prospect.modifieddate}}
+    </p>
+</div>
+
+
+    <button class="button button-block button-assertive">
+      Delete
+    </button>
   </ion-content>
 </ion-view>
