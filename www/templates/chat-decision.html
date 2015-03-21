@@ -1,22 +1,17 @@
-<ion-view view-title="Record Decision">
+<ion-view view-title="Decision">
   <ion-content>
     <div class="list">
-      <label class="item item-input">
-        <span class="input-label">Username</span>
-        <input type="text">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Password</span>
-        <input type="password">
-      </label>
-      <button class="button button-full button-balanced">
-        Submit
-      </button>
-      <button class="button button-full button-assertive">
-        Log Out
-      </button>
+      <ion-toggle  ng-model="settings.saved">
+          Saved
+      </ion-toggle>
+
+      <ion-toggle  ng-model="settings.baptized">
+          Baptized
+      </ion-toggle>
+
+      <ion-toggle  ng-model="settings.joinedthechurch">
+          Joined the church
+      </ion-toggle>
     </div>
   </ion-content>
 </ion-view>
-
-
