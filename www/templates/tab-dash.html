@@ -105,15 +105,15 @@
       </label>
 
 <!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="settings.previouslysaved">
+    <ion-toggle  ng-model="app.person.previouslysaved" ng-change="app.toggle()">
         Previously saved
     </ion-toggle>
 <!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="settings.previouslybaptized">
+    <ion-toggle  ng-model="app.person.previouslybaptized">
         Previously baptized
     </ion-toggle>
 <!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="settings.joinchurch">
+    <ion-toggle  ng-model="app.person.joinchurch">
         Join church
     </ion-toggle>
 

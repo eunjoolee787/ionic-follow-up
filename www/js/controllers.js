@@ -14,7 +14,9 @@ angular.module('starter.controllers', [])
           console.log(error);
         })
     }
-
+    app.toggle = function () {
+      console.log("toggle");
+    }
 })
 
 
