@@ -109,11 +109,11 @@
         Previously saved
     </ion-toggle>
 <!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="app.person.previouslybaptized">
+    <ion-toggle  ng-model="app.person.previouslybaptized" ng-change="app.toggle()">
         Previously baptized
     </ion-toggle>
 <!-- TO DO - not saving in DB  -->
-    <ion-toggle  ng-model="app.person.joinchurch">
+    <ion-toggle  ng-model="app.person.joinchurch" ng-change="app.toggle()">
         Join church
     </ion-toggle>
 

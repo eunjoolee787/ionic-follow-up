@@ -58,6 +58,9 @@ angular.module('starter.controllers', [])
     $scope.prospect = response.data;
   })
 })
+    app.toggle = function () {
+    console.log("toggle");
+  }
 
 .controller('ChatDecisionCtrl', function($scope, $stateParams, Chats) {
   $scope.prospect = {};
