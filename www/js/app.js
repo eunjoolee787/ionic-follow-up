@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
  
 // });
 
-module.controller('PictureCtrl', function($scope, $cordovaCamera) {
+angular.module("starter").controller('PictureCtrl', function($scope, $cordovaCamera) {
 
   document.addEventListener("deviceready", function () {
 
@@ -71,7 +71,7 @@ module.controller('PictureCtrl', function($scope, $cordovaCamera) {
   }, false);
 });
 
-.config(function($stateProvider, $urlRouterProvider) {
+angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
