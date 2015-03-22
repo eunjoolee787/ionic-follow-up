@@ -53,7 +53,7 @@ angular.module('starter.controllers', [])
 
 .controller('ChatTypeCtrl', function($scope, $stateParams, Chats, $http) {
   var app = this;
-
+  console.log("rain");
   $scope.prospect = {};
   Chats.get($stateParams.chatId)
   .then(function (response) {
@@ -76,17 +76,40 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ChatDecisionCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDecisionCtrl', function($scope, $stateParams, Chats, $http) {
   var app = this;
-  console.log("work");
+
   $scope.prospect = {};
   Chats.get($stateParams.chatId)
   .then(function (response) {
     $scope.prospect = response.data;
-  });
+  })
+
+  app.editPerson = function (person) {
+      $http.put("http://localhost:4000/prospects/"+$stateParams.chatId, person)
+        .success(function (data) {
+          app.people = data;
+          console.log(data);
+        })
+        .error(function (error) {
+          console.log(error);
+        })
+    }
+
     app.toggle = function () {
     console.log("toggle");
   }
+
+  // console.log("work");
+  
+  // $scope.prospect = {};
+  // Chats.get($stateParams.chatId)
+  // .then(function (response) {
+  //   $scope.prospect = response.data;
+  // });
+  //   app.toggle = function () {
+  //   console.log("toggle");
+  // }
 })
 
 .controller('AccountCtrl', function($scope) {
