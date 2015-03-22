@@ -26,12 +26,13 @@
     Record Decision
   </button>
 
-<div class="item item-input">
+<label class="item item-input">
 <span class="input-label">Birthday</span>
+  <input type="date" ng-model="app.person.birthday">
     <p>
       {{prospect.birthday}}
     </p>
-</div>
+</label>
 
 <div class="item item-input">
 <span class="input-label">Age</span>   
@@ -46,6 +47,14 @@
       {{prospect.tel}}
     </p>
 </div>
+
+<!-- <label class="item item-input">
+<span class="input-label">Birthday</span>
+  <input type="date" ng-model="app.person.birthday">
+    <p>
+      {{prospect.birthday}}
+    </p>
+</label> -->
 
 <div class="item item-input">
 <span class="input-label">Email</span>  
