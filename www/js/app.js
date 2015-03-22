@@ -139,6 +139,8 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
+// {{prospect}}
+
     .state('tab.chat-type', {
       url: '/chats/:chatId/type',
       views: {

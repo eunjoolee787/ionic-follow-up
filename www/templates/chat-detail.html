@@ -22,13 +22,12 @@
   <a class="button icon icon-right ion-chevron-right" href="#tab/chats/{{prospect._id}}/edit">Edit</a>
 </p>
 
-<!--  <ion-tab title="Add" icon-off="ion-plus-round" icon-on="ion-plus-round" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
-  </ion-tab> -->
-   
-  <button class="button icon button-block button-balanced" href="#/tab/chat-type">
+<a href="#/tab/chats/{prospect._id}}/type">
+  <button class="button icon button-block button-balanced" >
     Type of Contact
-  </button>
+  </button>{{prospect}}
+</a>  
+
 
   <button class="button button-block button-balanced">
     Record Decision
