@@ -16,15 +16,16 @@
     <p>
       {{prospect.firstname}} {{prospect.lastname}}
     </p>
-<button class="button">Save</button>
-    
-  <button class="button button-block button-balanced">
-    Type of Contact
-  </button>
 
-  <button class="button button-block button-balanced">
-    Record Decision
-  </button>
+<!-- <button class="button">Save</button> -->
+<!--   <div class="button-bar">
+    <a class="button button-balanced" value="save" ng-click="app.addPerson(app.person)">Save</a>
+  </div>  -->  
+
+
+  <!-- save button-->
+<input type="button" value="save" ng-click="app.editPerson(prospect)"/> 
+{{app.person}} 
 
 <label class="item item-input">
 <span class="input-label">Birthday</span>
@@ -56,12 +57,28 @@
     </p>
 </label> -->
 
-<div class="item item-input">
+<!-- <label class="item item-input">
+  <span class="input-label">Email</span>
+  <input type="email" ng-model="app.person.email">
+    <p>
+      {{prospect.email}}
+    </p>
+</label> -->
+
+<label class="item item-input">
+  <span class="input-label">Email</span>
+  <input type="email" ng-model="prospect.email">
+ <!--    <p>
+      {{prospect.email}}
+    </p> -->
+</label>
+
+<!-- <div class="item item-input">
 <span class="input-label">Email</span>  
     <p>
       {{prospect.email}}
     </p>
-</div>
+</div> -->
 
 <div class="item item-input">
 <span class="input-label">Street</span> 

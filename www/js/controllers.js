@@ -43,12 +43,34 @@ angular.module('starter.controllers', [])
   })
 })
 
-.controller('ChatEditCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatEditCtrl', function($scope, $stateParams, Chats, $http) {
+  // $scope.prospect = {};
+  // Chats.get($stateParams.chatId)
+  // .then(function (response) {
+  //   $scope.prospect = response.data;
+  // })
+ var app = this;
+
   $scope.prospect = {};
   Chats.get($stateParams.chatId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
+
+  app.editPerson = function (person) {
+      $http.put("http://localhost:4000/prospects/"+$stateParams.chatId, person)
+        .success(function (data) {
+          app.person = data;
+          console.log(data);
+        })
+        .error(function (error) {
+          console.log(error);
+        })
+    }
+
+    app.toggle = function () {
+    console.log("toggle");
+  }
 })
 
 .controller('ChatTypeCtrl', function($scope, $stateParams, Chats, $http) {
@@ -99,18 +121,8 @@ angular.module('starter.controllers', [])
     app.toggle = function () {
     console.log("toggle");
   }
-
-  // console.log("work");
-  
-  // $scope.prospect = {};
-  // Chats.get($stateParams.chatId)
-  // .then(function (response) {
-  //   $scope.prospect = response.data;
-  // });
-  //   app.toggle = function () {
-  //   console.log("toggle");
-  // }
 })
+
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
