@@ -1,10 +1,32 @@
 angular.module('starter.controllers', [])
 
+.controller('LoginCtrl', function($scope, $ionicPopup, $state, $http) {
+    $scope.data = {};
+ 
+    $scope.login = function() {
+      $http.post("http://localhost:4000/validateUser", {username: $scope.data.username, password: $scope.data.password})
+        .success(function(data) {
+          if(data.success)
+            $state.go('tab.dash');
+          else {
+            var alertPopup = $ionicPopup.alert({
+              title: 'Login failed!',
+              template: 'Please check your credentials!'
+            });
+          }
+        })
+        .error(function (error) {
+          console.log(error);
+        });
+    }
+})
+
 .controller('DashCtrl', function($http) {
   var app = this;
   app.people = [];
 
     app.addPerson = function (person) {
+      console.log(person);
       $http.post("http://localhost:4000/form", person)
         .success(function (data) {
           app.people = data;

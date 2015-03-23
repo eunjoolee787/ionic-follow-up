@@ -79,8 +79,14 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+  })
+
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
@@ -88,8 +94,9 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
 
   // Each tab has its own nav history stack:
 
+//TO DO
   .state('tab.login', {
-    url: '/login',
+    url: '/other',
     views: {
       'tab-login': {
         templateUrl: 'templates/tab-login.html',
@@ -169,6 +176,6 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login'); // /tab/dash
 
 });
