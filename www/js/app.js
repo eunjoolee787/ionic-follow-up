@@ -122,11 +122,11 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('tab.chat-edit', {
-      url: '/chats/:chatId/edit',
+    .state('tab.lists-edit', {
+      url: '/lists/:chatId/edit',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-edit.html',
+        'tab-lists': {
+          templateUrl: 'templates/lists-edit.html',
           controller: 'ChatEditCtrl as app'
         }
       }
