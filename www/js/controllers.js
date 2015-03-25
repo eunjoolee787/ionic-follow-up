@@ -92,7 +92,7 @@ angular.module('starter.controllers', [])
   })
 })
 
-.controller('ChatEditCtrl', function($scope, $stateParams, Chats, $http) {
+.controller('ProspectsEditCtrl', function($scope, $stateParams, Chats, $http) {
   // $scope.prospect = {};
   // Chats.get($stateParams.chatId)
   // .then(function (response) {
@@ -122,7 +122,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ChatTypeCtrl', function($scope, $stateParams, Chats, $http) {
+.controller('ProspectsTypeCtrl', function($scope, $stateParams, Chats, $http) {
   var app = this;
 
   $scope.prospect = {};
@@ -147,7 +147,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ChatDecisionCtrl', function($scope, $stateParams, Chats, $http) {
+.controller('ProspectsDecisionCtrl', function($scope, $stateParams, Chats, $http) {
   var app = this;
 
   $scope.prospect = {};

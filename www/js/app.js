@@ -127,7 +127,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-edit.html',
-          controller: 'ChatEditCtrl as app'
+          controller: 'ProspectsEditCtrl as app'
         }
       }
     })
@@ -137,7 +137,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-type.html',
-          controller: 'ChatTypeCtrl as app'
+          controller: 'ProspectsTypeCtrl as app'
         }
       }
     })
@@ -147,7 +147,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-decision.html',
-          controller: 'ChatDecisionCtrl as app'
+          controller: 'ProspectsDecisionCtrl as app'
         }
       }
     })
