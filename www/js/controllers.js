@@ -57,8 +57,9 @@ angular.module('starter.controllers', [])
   .error(function (error) {
     console.log(error);
   });
-
+  
 })
+
 
 .controller('ProspectsDetailCtrl', function($scope, $stateParams, Prospects) {
   $scope.prospect = {};
