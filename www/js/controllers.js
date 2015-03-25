@@ -43,8 +43,8 @@ angular.module('starter.controllers', [])
     }
 })
 
-//tab-chats  //Lists
-.controller('ChatsCtrl', function($scope, Chats, $ionicScrollDelegate) {
+
+.controller('ProspectsCtrl', function($scope, Chats, $ionicScrollDelegate) {
   $scope.scrollTop = function() {
     $ionicScrollDelegate.resize();
   };
