@@ -4,7 +4,7 @@
 
 
 
-<div class="bar bar-header item-input-inset">
+<!-- <div class="bar bar-header item-input-inset">
   <label class="item-input-wrapper">
     <i class="icon ion-ios7-search placeholder-icon"></i>
     <input type="search" placeholder="Search">
@@ -12,7 +12,47 @@
   <button class="button button-clear">
     Cancel
   </button>
-</div>
+</div> -->
+
+  <!-- <div class="bar bar-subheader bar-calm item-input-inset"> -->
+  <div class="bar bar-header item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input type="search" placeholder="search item" ng-model="searchFilter" ng-change="scrollTop()">
+    </label>
+    <button class="button button-clear">
+    Cancel
+  </button>
+  </div>
+
+   <ion-content class="has-subheader">
+
+      <!-- The list directive is great, but be sure to also checkout the collection repeat directive when scrolling through large lists -->
+      
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items | filter:searchFilter" 
+                  item="item"
+                  href="#/item/{{item.id}}">
+          Item {{ item.id }}
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
 
 
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="prospect in prospects" type="item-text-wrap" href="#/tab/chats/{{prospect._id}}">
@@ -22,16 +62,14 @@
         
         <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
 
-
-
         <h2>{{prospect.firstname}} {{prospect.lastname}}</h2>
         <h2>{{prospect.lastcontactdate}}</h2>
         <p>{{chat.lastText}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+<!--         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           Delete
-        </ion-option-button>
+        </ion-option-button> -->
       </ion-item>
     </ion-list>
   </ion-content>
