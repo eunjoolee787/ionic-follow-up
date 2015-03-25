@@ -142,11 +142,11 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('tab.chat-decision', {
-      url: '/chats/:chatId/decision',
+    .state('tab.lists-decision', {
+      url: '/lists/:chatId/decision',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-decision.html',
+        'tab-lists': {
+          templateUrl: 'templates/lists-decision.html',
           controller: 'ChatDecisionCtrl as app'
         }
       }
