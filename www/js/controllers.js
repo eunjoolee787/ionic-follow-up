@@ -86,7 +86,7 @@ angular.module('starter.controllers', [])
 
 .controller('ProspectsDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.prospect = {};
-  Chats.get($stateParams.chatId)
+  Chats.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
@@ -94,20 +94,20 @@ angular.module('starter.controllers', [])
 
 .controller('ProspectsEditCtrl', function($scope, $stateParams, Chats, $http) {
   // $scope.prospect = {};
-  // Chats.get($stateParams.chatId)
+  // Chats.get($stateParams.prospectId)
   // .then(function (response) {
   //   $scope.prospect = response.data;
   // })
  var app = this;
 
   $scope.prospect = {};
-  Chats.get($stateParams.chatId)
+  Chats.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.chatId, person)
+      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           app.person = data;
           console.log(data);
@@ -126,13 +126,13 @@ angular.module('starter.controllers', [])
   var app = this;
 
   $scope.prospect = {};
-  Chats.get($stateParams.chatId)
+  Chats.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.chatId, person)
+      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           app.people = data;
           console.log(data);
@@ -151,13 +151,13 @@ angular.module('starter.controllers', [])
   var app = this;
 
   $scope.prospect = {};
-  Chats.get($stateParams.chatId)
+  Chats.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.chatId, person)
+      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           app.people = data;
           console.log(data);

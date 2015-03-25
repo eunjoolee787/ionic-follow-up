@@ -113,7 +113,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       }
     })
     .state('tab.lists-detail', {
-      url: '/lists/:chatId',
+      url: '/lists/:prospectId',
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-detail.html',
@@ -123,7 +123,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('tab.lists-edit', {
-      url: '/lists/:chatId/edit',
+      url: '/lists/:prospectId/edit',
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-edit.html',
@@ -133,7 +133,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('tab.lists-type', {
-      url: '/lists/:chatId/type',
+      url: '/lists/:prospectId/type',
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-type.html',
@@ -143,7 +143,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('tab.lists-decision', {
-      url: '/lists/:chatId/decision',
+      url: '/lists/:prospectId/decision',
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-decision.html',
