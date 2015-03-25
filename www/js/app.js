@@ -92,18 +92,6 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
     templateUrl: "templates/tabs.html"
   })
 
-  // Each tab has its own nav history stack:
-
-//TO DO
-  .state('tab.login', {
-    url: '/other',
-    views: {
-      'tab-login': {
-        templateUrl: 'templates/tab-login.html',
-        controller: 'DashCtrl as app'
-      }
-    }
-  })
 
   // Each tab has its own nav history stack:
 
