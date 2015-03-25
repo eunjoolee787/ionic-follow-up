@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
 
+//LOGIN
 .controller('LoginCtrl', function($scope, $ionicPopup, $state, $http) {
     $scope.data = {};
  
@@ -21,6 +22,7 @@ angular.module('starter.controllers', [])
     }
 })
 
+//ADD
 .controller('DashCtrl', function($http) {
   var app = this;
   app.people = [];
