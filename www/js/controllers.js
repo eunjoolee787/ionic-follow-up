@@ -44,32 +44,8 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ProspectsCtrl', function($scope, Prospects, $ionicScrollDelegate) {
-  $scope.scrollTop = function() {
-    $ionicScrollDelegate.resize();
-  };
-
-  $scope.data = {
-    showDelet: false
-  };
-
-  $scope.edit = function(item) {
-    alert('Edit Item: ' + item.id);
-  };
-
-  $scope.share = function(item) {
-    alert('Share Item: ' + item.id);
-  };
-
-  $scope.moveItem = function(item, fromIndex, toIndex) {
-    $scope.items.splice(fromIndex, 1);
-    $scope.items.splice(toIndex, 0, item);
-  };
-
-  $scope.onItemDelete = function(item) {
-    $scope.items.splice($scope.items.indexOf(item), 1);
-  };
-
+.controller('ProspectsCtrl', function($scope, Prospects) {
+  
   $scope.prospects = [];
   console.log("tony");
   Prospects.all()
