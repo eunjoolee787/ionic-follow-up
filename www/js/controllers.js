@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ProspectsCtrl', function($scope, Chats, $ionicScrollDelegate) {
+.controller('ProspectsCtrl', function($scope, Prospects, $ionicScrollDelegate) {
   $scope.scrollTop = function() {
     $ionicScrollDelegate.resize();
   };
@@ -72,7 +72,7 @@ angular.module('starter.controllers', [])
 
   $scope.prospects = [];
   console.log("tony");
-  Chats.all()
+  Prospects.all()
   .success(function (data) {
     console.log(data);
     $scope.prospects = data;
@@ -84,24 +84,24 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ProspectsDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ProspectsDetailCtrl', function($scope, $stateParams, Prospects) {
   $scope.prospect = {};
-  Chats.get($stateParams.prospectId)
+  Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
 })
 
-.controller('ProspectsEditCtrl', function($scope, $stateParams, Chats, $http) {
+.controller('ProspectsEditCtrl', function($scope, $stateParams, Prospects, $http) {
   // $scope.prospect = {};
-  // Chats.get($stateParams.prospectId)
+  // Prospects.get($stateParams.prospectId)
   // .then(function (response) {
   //   $scope.prospect = response.data;
   // })
  var app = this;
 
   $scope.prospect = {};
-  Chats.get($stateParams.prospectId)
+  Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
@@ -122,11 +122,11 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ProspectsTypeCtrl', function($scope, $stateParams, Chats, $http) {
+.controller('ProspectsTypeCtrl', function($scope, $stateParams, Prospects, $http) {
   var app = this;
 
   $scope.prospect = {};
-  Chats.get($stateParams.prospectId)
+  Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
@@ -147,11 +147,11 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ProspectsDecisionCtrl', function($scope, $stateParams, Chats, $http) {
+.controller('ProspectsDecisionCtrl', function($scope, $stateParams, Prospects, $http) {
   var app = this;
 
   $scope.prospect = {};
-  Chats.get($stateParams.prospectId)
+  Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
