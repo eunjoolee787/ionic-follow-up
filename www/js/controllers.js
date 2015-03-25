@@ -97,7 +97,7 @@ angular.module('starter.controllers', [])
 
 .controller('ChatTypeCtrl', function($scope, $stateParams, Chats, $http) {
   var app = this;
-  console.log("rain");
+
   $scope.prospect = {};
   Chats.get($stateParams.chatId)
   .then(function (response) {

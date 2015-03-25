@@ -31,49 +31,23 @@
   <a class="button button-balanced" value="save" ng-click="app.editPerson(prospect)"/>Save</a>
 </div>
 {{app.person}} 
-<!--  <p>
-  <div class="button-bar">
-    <a class="button button-balanced" value="save" ng-click="app.editPerson(prospect)">Save</a>
-  </div>
-</p> -->
+
 
 <label class="item item-input">
 <span class="input-label">Birthday</span>
-  <input type="date" ng-model="app.person.birthday">
-    <p>
-      {{prospect.birthday}}
-    </p>
+  <input type="date" ng-model="prospect.birthday">
 </label>
 
-<div class="item item-input">
-<span class="input-label">Age</span>   
-    <p>
-      {{prospect.age}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Age</span>
+  <input type="text" ng-model="prospect.age">   
+</label>
 
-<div class="item item-input">
-<span class="input-label">Telephone</span>  
-    <p>
-      {{prospect.tel}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Telephone</span> 
+  <input type="tel" ng-model="prospect.tel">   
+</label>
 
-<!-- <label class="item item-input">
-<span class="input-label">Birthday</span>
-  <input type="date" ng-model="app.person.birthday">
-    <p>
-      {{prospect.birthday}}
-    </p>
-</label> -->
-
-<!-- <label class="item item-input">
-  <span class="input-label">Email</span>
-  <input type="email" ng-model="app.person.email">
-    <p>
-      {{prospect.email}}
-    </p>
-</label> -->
 
 <label class="item item-input">
   <span class="input-label">Email</span>
@@ -83,125 +57,90 @@
     </p> -->
 </label>
 
-<!-- <div class="item item-input">
-<span class="input-label">Email</span>  
-    <p>
-      {{prospect.email}}
-    </p>
-</div> -->
+<label class="item item-input">
+  <span class="input-label">Street</span> 
+  <input type="text" ng-model="prospect.street">
+</label>
 
-<div class="item item-input">
-<span class="input-label">Street</span> 
-    <p>
-      {{prospect.street}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">City</span> 
+  <input type="text" ng-model="prospect.city">
+</label>
 
-<div class="item item-input">
-<span class="input-label">City</span> 
-    <p>
-      {{prospect.city}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">State</span> 
+  <input type="text" ng-model="prospect.state">
+</label>
 
-<div class="item item-input">
-<span class="input-label">State</span> 
-    <p>
-      {{prospect.state}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Zip</span> 
+  <input type="text" ng-model="prospect.zip">
+</label>
 
-<div class="item item-input">
-<span class="input-label">Zip</span> 
-    <p>
-      {{prospect.zip}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Facebook</span> 
+  <input type="text" ng-model="prospect.facebook">
+</label>
 
-<div class="item item-input">
-<span class="input-label">Facebook</span> 
-    <p>
-      {{prospect.facebook}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Instagram</span> 
+  <input type="text" ng-model="prospect.instagram">
+</label>
 
-<div class="item item-input">
-<span class="input-label">Instagram</span> 
-    <p>
-      {{prospect.instagram}}
-    </p>
-</div>
+<!-- <label class="item item-input">
+<span class="input-label">Birthday</span>
+  <input type="date" ng-model="prospect.birthday">
+</label> -->
 
-<div class="item item-input">
-<span class="input-label">Contact Date</span> 
-    <p>
-      {{prospect.contactdate}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Initial Date</span> 
+  <input type="date" ng-model="prospect.initialdate">
+</label>
 
-<div class="item item-input">
-<span class="input-label">Contact Person</span> 
-    <p>
-      {{prospect.contactperson}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Contact Person</span> 
+  <input type="text" ng-model="prospect.contactperson">
+</label>
 
-<div class="item item-input">
-<span class="input-label">Name of Event</span> 
-    <p>
-      {{prospect.nameofevent}}
-    </p>
-</div>
-
-<div class="item item-input">
-<span class="input-label">Previously Saved</span> 
-    <p>
-      {{prospect.previouslysaved}}
-    </p>
-</div>
-
-<div class="item item-input">
-<span class="input-label">Previously Baptized</span> 
-    <p>
-      {{prospect.previoslybaptized}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Name of Event</span>
+  <input type="text" ng-model="prospect.nameofevent"> 
+</label>
 
 
-<div class="item item-input">
-<span class="input-label">Join Church</span> 
-    <p>
-      {{prospect.joinchurch}}
-    </p>
-</div>
+<ion-toggle  ng-model="prospect.previouslysaved" ng-change="app.toggle()">
+    Previously saved
+</ion-toggle>
 
-<div class="item item-input">
-<span class="input-label">Status</span> 
-    <p>
-      {{prospect.status}}
-    </p>
-</div>
+<ion-toggle  ng-model="prospect.previouslybaptized" ng-change="app.toggle()">
+    Previously baptized
+</ion-toggle>
 
-<div class="item item-input">
-<span class="input-label">Last Contact Date</span> 
-    <p>
-      {{prospect.lastcontactdate}}
-    </p>
-</div>
+<ion-toggle  ng-model="prospect.joinchurch" ng-change="app.toggle()">
+    Join Church
+</ion-toggle>
 
-<div class="item item-input">
-<span class="input-label">Created Date</span> 
-    <p>
-      {{prospect.createddate}}
-    </p>
-</div>
 
-<div class="item item-input">
-<span class="input-label">Modified Date</span> 
-    <p>
-      {{prospect.modifieddate}}
-    </p>
-</div>
+<label class="item item-input">
+  <span class="input-label">Status</span>
+  <input type="text" ng-model="prospect.status"> 
+</label>
+
+
+<label class="item item-input">
+  <span class="input-label">Last Contact Date</span> 
+  <input type="date" ng-model="prospect.lastcontactdate">
+</label>
+
+<label class="item item-input">
+  <span class="input-label">Created Date</span> 
+  <input type="date" ng-model="prospect.createddate">
+</label>
+
+<label class="item item-input">
+  <span class="input-label">Modified Date</span>
+  <input type="date" ng-model="prospect.modifieddate"> 
+</label>
 
 
     <button class="button button-block button-assertive">
