@@ -117,7 +117,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-detail.html',
-          controller: 'ChatDetailCtrl as app'
+          controller: 'ProspectsDetailCtrl as app'
         }
       }
     })
