@@ -9,49 +9,16 @@
 
   <ion-content class="padding">
 
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{prospect.firstname}} {{prospect.lastname}}
-    </p>
+  <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+  <p>
+    {{prospect.firstname}} {{prospect.lastname}}
+  </p>
 
-<!-- <button class="button">Edit</button> -->
-<p>
-  <a class="button icon icon-right ion-chevron-right" href="#tab/lists/{{prospect._id}}/edit">Edit Main Contact</a>
-</p>
-
-<!-- <p>
-  <a class="button icon icon-right ion-chevron-right" href="#tab/prospect/{{prospect._id}}/type">Type</a>
-</p>
- -->
-
-<div class="button-bar">
-<a class="button icon" href="#tab/prospect/{{prospect._id}}/type">Edit Main Contact</a>
-  <a class="button">Edit Type of Contact</a>
-  <a class="button">Edit Record Decision</a>
+<!-- MAIN CONTACT -->
+<div class="item item-divider">
+  <p class="title-name">Main Contact</p>
+  <a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-icon icon ion-edit">Edit</button></a>
 </div>
-
-<a href="#/tab/lists/{{prospect._id}}/type">
-  <button class="button icon button-block button-balanced">
-    Edit Type of Contact
-  </button>
-</a>  
-
-<a href="#/tab/lists/{{prospect._id}}/decision">
-  <button class="button icon button-block button-balanced">
-    Edit Record Decision
-  </button>
-</a>  
-
-
-<div class="item item-divider">Main Contact<a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-icon icon ion-edit">Edit</button></a></div>
-
-
-
-<!-- <div class="bar bar-balanced">
-  <h1 class="title">Main Contact</h1>
-  <a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-small button-light">Edit</button></a>
-</div>
- -->
 
 <div class="item item-input">
 <span class="input-label">Birthday</span>
@@ -194,8 +161,13 @@
     </p>
 </div>
 
-<div class="item item-divider">Type of Contact</div>
 <!-- TYPE OF CONTACT -->
+
+<div class="item item-divider">
+  <p class="title-name">Type of Contact</p>
+  <a class="edit" href="#tab/lists/{{prospect._id}}/type"><button class="button button-icon icon ion-edit">Edit</button></a>
+</div>
+
 <div class="item item-input">
 <span class="input-label">Visit</span>
     <p>
@@ -232,7 +204,10 @@
 </div>
 
 <!-- RECORD DECISION -->
-<div class="item item-divider">Record Decision</div>
+<div class="item item-divider">
+  <p class="title-name">Record Decision</p>
+  <a class="edit" href="#tab/lists/{{prospect._id}}/decision"><button class="button button-icon icon ion-edit">Edit</button></a>
+</div>
 
 <div class="item item-input">
 <span class="input-label">Save</span>

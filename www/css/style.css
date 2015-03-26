@@ -8,16 +8,28 @@ div.bar.bar-header.item-input-inset {
   background-color: #00d6dd;
 }
 
-button.button.button-clear{
+/*button.button.button-clear{
   color: gray;
-}
+}*/
 
-button.button.button-block.button-calm {
+/*button.button.button-block.button-calm {
   background-color: #00d6dd;
+}*/
+
+/*a {
+  text-decoration: none;
+}*/
+
+.item.item-divider {
+  background-color: #00d6dd;
+  position: relative;
 }
 
-a {
-  text-decoration: none;
+p.title-name {
+  color: #444;
+  font-size: 18px;
+  position: absolute;
+  padding-top: 14px;
 }
 
 a.edit {
