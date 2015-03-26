@@ -1,4 +1,4 @@
-<ion-view view-title="Decision">
+<ion-view view-title="Record Decision">
   <ion-content>
     <div class="list">
       <ion-toggle  ng-model="app.person.saved" ng-change="app.toggle()">
@@ -12,9 +12,14 @@
       <ion-toggle  ng-model="app.person.joinedthechurch" ng-change="app.toggle()">
           Joined the church
       </ion-toggle>
-
-            <!-- save button-->
-        <input type="button" value="save" ng-click="app.editPerson(app.person)"/>
     </div>
+
+    <!-- save button-->
+  <div class="button-bar">
+    <a class="button button-balanced" value="save" ng-click="app.editPerson(app.person)">Save</a>
+  </div>
+  {{app.person}} 
+
+
   </ion-content>
 </ion-view>
