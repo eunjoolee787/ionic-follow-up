@@ -11,3 +11,7 @@ div.bar.bar-header.item-input-inset {
 button.button.button-clear{
   color: none;
 }
+
+button.button.button-block.button-calm {
+  background-color: #00d6dd;
+}
