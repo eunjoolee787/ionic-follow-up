@@ -19,3 +19,8 @@ button.button.button-block.button-calm {
 a {
   text-decoration: none;
 }
+
+a.edit {
+  float: right;
+  color: black;
+}

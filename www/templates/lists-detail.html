@@ -5,10 +5,7 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="Lists Detail">
-<!-- TO DO -->
-<!-- <div animate-right class="box">Edit</div>
-<div class="box animate-right-class">Edit</div>
-<div animate="right" class="box">Edit</div> -->
+
 
   <ion-content class="padding">
 
@@ -19,7 +16,7 @@
 
 <!-- <button class="button">Edit</button> -->
 <p>
-  <a class="button icon icon-right ion-chevron-right" href="#tab/lists/{{prospect._id}}/edit">Edit</a>
+  <a class="button icon icon-right ion-chevron-right" href="#tab/lists/{{prospect._id}}/edit">Edit Main Contact</a>
 </p>
 
 <!-- <p>
@@ -27,19 +24,34 @@
 </p>
  -->
 
+<div class="button-bar">
+<a class="button icon" href="#tab/prospect/{{prospect._id}}/type">Edit Main Contact</a>
+  <a class="button">Edit Type of Contact</a>
+  <a class="button">Edit Record Decision</a>
+</div>
 
 <a href="#/tab/lists/{{prospect._id}}/type">
   <button class="button icon button-block button-balanced">
-    Type of Contact
+    Edit Type of Contact
   </button>
 </a>  
 
 <a href="#/tab/lists/{{prospect._id}}/decision">
   <button class="button icon button-block button-balanced">
-    Record Decision
+    Edit Record Decision
   </button>
 </a>  
 
+
+<div class="item item-divider">Main Contact<a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-icon icon ion-edit">Edit</button></a></div>
+
+
+
+<!-- <div class="bar bar-balanced">
+  <h1 class="title">Main Contact</h1>
+  <a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-small button-light">Edit</button></a>
+</div>
+ -->
 
 <div class="item item-input">
 <span class="input-label">Birthday</span>
@@ -182,6 +194,7 @@
     </p>
 </div>
 
+<div class="item item-divider">Type of Contact</div>
 <!-- TYPE OF CONTACT -->
 <div class="item item-input">
 <span class="input-label">Visit</span>
@@ -219,6 +232,8 @@
 </div>
 
 <!-- RECORD DECISION -->
+<div class="item item-divider">Record Decision</div>
+
 <div class="item item-input">
 <span class="input-label">Save</span>
     <p>
