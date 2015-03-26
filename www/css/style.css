@@ -9,9 +9,13 @@ div.bar.bar-header.item-input-inset {
 }
 
 button.button.button-clear{
-  color: none;
+  color: gray;
 }
 
 button.button.button-block.button-calm {
   background-color: #00d6dd;
+}
+
+a {
+  text-decoration: none;
 }
