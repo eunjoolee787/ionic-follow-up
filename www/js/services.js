@@ -42,6 +42,9 @@ angular.module('starter.services', [])
     },
     get: function(prospectId) {
       return $http.get("http://localhost:4000/prospects/"+prospectId);
+    },
+    delete: function(prospectId) {
+      return $http.delete("http://localhost:4000/prospects/"+prospectId);
     }
   };
 });

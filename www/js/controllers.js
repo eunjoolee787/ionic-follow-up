@@ -77,7 +77,7 @@ angular.module('starter.controllers', [])
      });
      confirmPopup.then(function(res) {
        if(res) {
-         console.log('You are sure');
+         Prospects.delete($stateParams.prospectId)
        } else {
          console.log('You are not sure');
        }
