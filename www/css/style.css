@@ -3,3 +3,11 @@
 .bar.bar-header {
   background-color: #444;
 }
+
+div.bar.bar-header.item-input-inset {
+  background-color: #00d6dd;
+}
+
+button.button.button-clear{
+  color: none;
+}
