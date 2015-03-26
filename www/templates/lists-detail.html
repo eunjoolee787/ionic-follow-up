@@ -182,23 +182,14 @@
     </p>
 </div>
 
+
 <!-- DELETE BUTTON AREA -->
-<!--     <button class="button button-block button-assertive">
-      Delete
-    </button> -->
+<body class="padding" ng-controller="PopupCtrl">
+  <button class="button button-block button-assertive" ng-click="showConfirm()">
+    Delete
+  </button>
 
-<ion-toggle ng-model="shouldShowDelete">
-  DELETE?
-</ion-toggle>
-<ion-list show-delete="shouldShowDelete">
-  <ion-item>
-    <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-    CONFIRM TO DELETE!
-  </ion-item>
-</ion-list>
-
-
-
+    
 
   </ion-content>
 </ion-view>

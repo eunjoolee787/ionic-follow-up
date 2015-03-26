@@ -57,24 +57,38 @@ angular.module('starter.controllers', [])
   .error(function (error) {
     console.log(error);
   });
-  
+
 })
 
 
-.controller('ProspectsDetailCtrl', function($scope, $stateParams, Prospects) {
+.controller('ProspectsDetailCtrl', function($scope, $stateParams, Prospects, $ionicPopup) {
   $scope.prospect = {};
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
   })
+
+   // A confirm dialog
+   $scope.showConfirm = function() {
+     var confirmPopup = $ionicPopup.confirm({
+       title: 'Delete',
+       template: 'Are you sure you want to delete this contact?'
+     });
+     confirmPopup.then(function(res) {
+       if(res) {
+         console.log('You are sure');
+       } else {
+         console.log('You are not sure');
+       }
+     });
+   };
+
 })
 
+
+
+
 .controller('ProspectsEditCtrl', function($scope, $stateParams, Prospects, $http) {
-  // $scope.prospect = {};
-  // Prospects.get($stateParams.prospectId)
-  // .then(function (response) {
-  //   $scope.prospect = response.data;
-  // })
  var app = this;
 
   $scope.prospect = {};
