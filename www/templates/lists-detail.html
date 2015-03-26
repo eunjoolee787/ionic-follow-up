@@ -111,7 +111,7 @@
 <div class="item item-input">
 <span class="input-label">Initial Date</span> 
     <p>
-      {{prospect.initialdate}}
+      {{prospect.initialdate | date:'MM-dd-yyyy'}}
     </p>
 </div>
 
@@ -161,21 +161,21 @@
 <div class="item item-input">
 <span class="input-label">Last Contact Date</span> 
     <p>
-      {{prospect.lastcontactdate}}
+      {{prospect.lastcontactdate | date:'MM-dd-yyyy'}}
     </p>
 </div>
 
 <div class="item item-input">
 <span class="input-label">Created Date</span> 
     <p>
-      {{prospect.createddate}}
+      {{prospect.createddate | date: 'MM-dd-yyyy'}}
     </p>
 </div>
 
 <div class="item item-input">
 <span class="input-label">Modified Date</span> 
     <p>
-      {{prospect.modifieddate}}
+      {{prospect.modifieddate | date: 'MM-dd-yyyy'}}
     </p>
 </div>
 
