@@ -24,7 +24,7 @@ angular.module('starter.controllers', [])
 
 
 //ADD
-.controller('DashCtrl', function($http) {
+.controller('DashCtrl', function($http, $scope) {
   var app = this;
   app.people = [];
 
@@ -42,6 +42,9 @@ angular.module('starter.controllers', [])
     app.toggle = function () {
       console.log("toggle");
     }
+    // $scope.date = new Date();
+    
+
 })
 
 
@@ -112,6 +115,7 @@ angular.module('starter.controllers', [])
     app.toggle = function () {
     console.log("toggle");
   }
+  $scope.today = new Date();
 })
 
 .controller('ProspectsTypeCtrl', function($scope, $stateParams, Prospects, $http) {
@@ -137,6 +141,7 @@ angular.module('starter.controllers', [])
     app.toggle = function () {
     console.log("toggle");
   }
+    $scope.today = new Date();
 })
 
 .controller('ProspectsDecisionCtrl', function($scope, $stateParams, Prospects, $http) {

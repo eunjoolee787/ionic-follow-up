@@ -20,10 +20,28 @@
   <a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-icon icon ion-edit">Edit</button></a>
 </div>
 
+
+<!-- <div ng-controller="DashCtrl">
+  <h3>{{today}}</h3>
+  <h3>{{today | date}}</h3>
+</div> -->
+
+<!-- <div class="item item-input">
+<span class="input-label">Birthday</span>
+  <h3>{{today}}</h3>
+  <h3>{{today | date}}</h3>
+</div>
+ -->
+<!-- <div class="item item-input">
+{{'2013-01-01T00:00:00' | date:'yyyy-MM-dd'}}
+</div> -->
+
+
+
 <div class="item item-input">
 <span class="input-label">Birthday</span>
     <p>
-      {{prospect.birthday}}
+      {{prospect.birthday | date:'MM-dd-yyyy'}}
     </p>
 </div>
 
