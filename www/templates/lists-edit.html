@@ -13,14 +13,23 @@
   <ion-content class="padding">
 
     <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{prospect.firstname}} {{prospect.lastname}}
-    </p>
+
+
+<label class="item item-input">
+  <span class="input-label">First name</span>
+  <input type="text" ng-model="prospect.firstname">
+</label>
+<label class="item item-input">
+  <span class="input-label">Last name</span>
+  <input type="text" ng-model="prospect.lastname">
+</label>
+
+
 
 <div class="button-bar">
   <a class="button button-balanced" value="save" ng-click="app.editPerson(prospect)"/>Save</a>
 </div>
-{{app.person}} 
+<!-- {{app.person}}  -->
 
 
 <label class="item item-input">
