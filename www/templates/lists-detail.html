@@ -255,6 +255,13 @@
     </p>
 </div>
 
+<div class="item item-input">
+<span class="input-label">Modified Date Decision</span> 
+    <p>
+      {{prospect.modifieddateDecision | date: 'MM-dd-yyyy HH:mm:ss'}}
+    </p>
+</div>
+
 <!-- DELETE BUTTON AREA -->
 <body class="padding" ng-controller="PopupCtrl">
   <button class="button button-block button-assertive" ng-click="showConfirm()">
