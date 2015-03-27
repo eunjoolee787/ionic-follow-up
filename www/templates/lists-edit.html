@@ -17,16 +17,6 @@
       {{prospect.firstname}} {{prospect.lastname}}
     </p>
 
-<!-- <button class="button">Save</button> -->
-<!--   <div class="button-bar">
-    <a class="button button-balanced" value="save" ng-click="app.addPerson(app.person)">Save</a>
-  </div>  -->  
-
-
-  <!-- save button-->
-<!-- <input type="button" value="save" ng-click="app.editPerson(prospect)"/>
-{{app.person}}  -->
-
 <div class="button-bar">
   <a class="button button-balanced" value="save" ng-click="app.editPerson(prospect)"/>Save</a>
 </div>
@@ -52,9 +42,6 @@
 <label class="item item-input">
   <span class="input-label">Email</span>
   <input type="email" ng-model="prospect.email">
- <!--    <p>
-      {{prospect.email}}
-    </p> -->
 </label>
 
 <label class="item item-input">
@@ -87,11 +74,6 @@
   <input type="text" ng-model="prospect.instagram">
 </label>
 
-<!-- <label class="item item-input">
-<span class="input-label">Birthday</span>
-  <input type="date" ng-model="prospect.birthday">
-</label> -->
-
 <label class="item item-input">
   <span class="input-label">Initial Date</span> 
   <input type="date" ng-model="prospect.initialdate">
@@ -121,24 +103,6 @@
 </ion-toggle>
 
 
-<label class="item item-input">
-  <span class="input-label">Status</span>
-  <input type="text" ng-model="prospect.status"> 
-</label>
-
-
-<label class="item item-input">
-  <span class="input-label">Last Contact Date</span> 
-  <input type="date" ng-model="prospect.lastcontactdate">
-</label>
-
-<label class="item item-input">
-  <span class="input-label">Created Date</span> 
-  <input type="date" ng-model="prospect.createddate">
-</label>
-
-
-  <!-- <span class="input-label">Modified Date</span> -->
   <input type="hidden" ng-model="prospect.modifieddate"> 
 
 

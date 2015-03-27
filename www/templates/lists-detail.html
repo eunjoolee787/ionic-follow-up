@@ -20,24 +20,6 @@
   <a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-icon icon ion-edit">Edit</button></a>
 </div>
 
-
-<!-- <div ng-controller="DashCtrl">
-  <h3>{{today}}</h3>
-  <h3>{{today | date}}</h3>
-</div> -->
-
-<!-- <div class="item item-input">
-<span class="input-label">Birthday</span>
-  <h3>{{today}}</h3>
-  <h3>{{today | date}}</h3>
-</div>
- -->
-<!-- <div class="item item-input">
-{{'2013-01-01T00:00:00' | date:'yyyy-MM-dd'}}
-</div> -->
-
-
-
 <div class="item item-input">
 <span class="input-label">Birthday</span>
     <p>
@@ -152,27 +134,6 @@
 </div>
 
 <div class="item item-input">
-<span class="input-label">Status</span> 
-    <p>
-      {{prospect.status}}
-    </p>
-</div>
-
-<div class="item item-input">
-<span class="input-label">Last Contact Date</span> 
-    <p>
-      {{prospect.lastcontactdate | date:'MM-dd-yyyy'}}
-    </p>
-</div>
-
-<div class="item item-input">
-<span class="input-label">Created Date</span> 
-    <p>
-      {{prospect.createddate | date: 'MM-dd-yyyy'}}
-    </p>
-</div>
-
-<div class="item item-input">
 <span class="input-label">Modified Date</span> 
     <p>
       {{prospect.modifieddate | date: 'MM-dd-yyyy HH:mm:ss'}}
@@ -180,7 +141,6 @@
 </div>
 
 <!-- TYPE OF CONTACT -->
-
 <div class="item item-divider">
   <p class="title-name">Type of Contact</p>
   <a class="edit" href="#tab/lists/{{prospect._id}}/type"><button class="button button-icon icon ion-edit">Edit</button></a>
