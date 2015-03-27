@@ -17,6 +17,18 @@ button.button.button-block.button-calm {
   position: relative;
 }
 
+.item.item-input.modified-date {
+  background-color: #f1f1f1;
+}
+
+.item.item-input.modified-date-type {
+  background-color: #f1f1f1;
+}
+
+.item.item-input.modified-date-decision {
+  background-color: #f1f1f1;
+}
+
 p.title-name {
   color: #444;
   font-size: 18px;
