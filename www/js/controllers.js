@@ -97,6 +97,8 @@ angular.module('starter.controllers', [])
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
+    $scope.prospect.modifieddate = new Date();
+    console.log(response.data);
   })
 
   app.editPerson = function (person) {
@@ -123,12 +125,15 @@ angular.module('starter.controllers', [])
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
+    $scope.prospect.modifieddateType = new Date();
+    console.log(response.data);
   })
 
   app.editPerson = function (person) {
       $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
-          app.people = data;
+          // app.people = data;
+          app.person = data;
           console.log(data);
         })
         .error(function (error) {
@@ -165,7 +170,7 @@ angular.module('starter.controllers', [])
     app.toggle = function () {
     console.log("toggle");
   }
-    // $scope.today = new Date();
+    $scope.today = new Date();
 })
 
 

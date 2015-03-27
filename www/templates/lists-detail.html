@@ -175,7 +175,7 @@
 <div class="item item-input">
 <span class="input-label">Modified Date</span> 
     <p>
-      {{prospect.modifieddate | date: 'MM-dd-yyyy'}}
+      {{prospect.modifieddate | date: 'MM-dd-yyyy HH:mm:ss'}}
     </p>
 </div>
 
@@ -218,6 +218,13 @@
 <span class="input-label">Emailed</span>
     <p>
       {{prospect.emailed}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Modified Date Type</span> 
+    <p>
+      {{prospect.modifieddateType | date: 'MM-dd-yyyy HH:mm:ss'}}
     </p>
 </div>
 
