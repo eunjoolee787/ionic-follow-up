@@ -69,32 +69,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
  
 // });
 
-angular.module("starter").controller('PictureCtrl', function($scope, $cordovaCamera) {
-
-  document.addEventListener("deviceready", function () {
-
-    var options = {
-      quality: 75,
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: Camera.EncodingType.JPEG,
-      targetWidth: 300 ,
-      targetHeight: 300,
-      popoverOptions: CameraPopoverOptions,
-      saveToPhotoAlbum: false
-    };
-
-    $cordovaCamera.takePicture(options).then(function(imageData) {
-      var image = document.getElementById('myImage');
-      image.src = "data:image/jpeg;base64," + imageData;
-    }, function(err) {
-      // error
-    });
-
-  }, false);
-});
-
 
 
 angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
@@ -116,6 +90,17 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
+  })
+
+
+  .state('tab.camera', {
+    url: '/camera',
+    views: {
+      'tab-camera': {
+        templateUrl: 'templates/camera.html',
+        controller: 'PictureCtrl'  
+      }
+    }
   })
 
 //TAB-ADD.HTML
@@ -188,6 +173,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login'); // /tab/dash
+  // $urlRouterProvider.otherwise('/login'); // /tab/dash
+   $urlRouterProvider.otherwise('/tab/camera'); 
 
 });

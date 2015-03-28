@@ -5,24 +5,24 @@ angular.module('starter.controllers', [])
   $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 })
 
-.controller('PictureCtrl', function($scope) {
-})
-
 .controller('PictureCtrl', function($scope, Prospects, Camera) {
+  console.log(Camera);
   $scope.prospects = Prospects.all();
   $scope.getPhoto = function() {
     console.log('Getting camera');
-    Camera.getPicture().then(function(imageURI) {
-      console.log(imageURI);
-      $scope.lastPhoto = imageURI;
-    }, function(err) {
-      console.err(err);
-    }, {
-      quality: 75,
-      targetWidth: 320,
-      targetHeight: 320,
-      saveToPhotoAlbum: false
-    });
+    Camera.getPicture()//promise
+
+      .then(function(imageURI) {
+        console.log(imageURI);
+        $scope.lastPhoto = imageURI;
+      }, function(err) {
+        console.err(err);
+      }, {
+        quality: 75,
+        targetWidth: 320,
+        targetHeight: 320,
+        saveToPhotoAlbum: false
+      });
     /*
     navigator.camera.getPicture(function(imageURI) {
       console.log(imageURI);
@@ -35,9 +35,6 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('PictureDetailCtrl', function($scope, $stateParams, Prospects) {
-  $scope.prospect = Prospects.get($stateParams.ProspectId);
-})
 
 //LOGIN
 .controller('LoginCtrl', function($scope, $ionicPopup, $state, $http) {
