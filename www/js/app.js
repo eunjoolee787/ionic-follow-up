@@ -112,8 +112,10 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+
     .state('tab.lists-detail', {
       url: '/lists/:prospectId',
+      cache: false,
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-detail.html',
