@@ -127,6 +127,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
 
     .state('tab.lists-edit', {
       url: '/lists/:prospectId/edit',
+      cache: false,
       views: {
         'tab-lists': {
           templateUrl: 'templates/lists-edit.html',

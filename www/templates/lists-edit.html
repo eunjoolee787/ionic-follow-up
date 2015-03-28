@@ -10,6 +10,10 @@
 
     <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
 
+<div class="button-bar">
+  <a class="button button-balanced" value="save" ng-click="app.editPerson(prospect)"/>Save</a>
+</div>
+<!-- {{app.person}}  -->
 
 <label class="item item-input">
   <span class="input-label">First name</span>
@@ -39,15 +43,6 @@
   <span class="input-label">Spouse Gender</span>
   <input type="text" ng-model="prospect.genderSpouse">
 </label>
-
-
-
-
-
-<div class="button-bar">
-  <a class="button button-balanced" value="save" ng-click="app.editPerson(prospect)"/>Save</a>
-</div>
-<!-- {{app.person}}  -->
 
 
 <label class="item item-input">
