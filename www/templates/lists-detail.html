@@ -14,10 +14,39 @@
     {{prospect.firstname}} {{prospect.lastname}}
   </p>
 
+
 <!-- MAIN CONTACT -->
 <div class="item item-divider">
   <p class="title-name">Main Contact</p>
   <a class="edit" href="#tab/lists/{{prospect._id}}/edit"><button class="button button-icon icon ion-edit">Edit</button></a>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Gender</span>
+    <p>
+      {{prospect.gender}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Spouse First Name</span>
+    <p>
+      {{prospect.firstnameSpouse}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Spouse Last Name</span>
+    <p>
+      {{prospect.lastnameSpouse}}
+    </p>
+</div>
+
+<div class="item item-input">
+<span class="input-label">Spouse Gender</span>
+    <p>
+      {{prospect.genderSpouse}}
+    </p>
 </div>
 
 <div class="item item-input">
