@@ -5,7 +5,14 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+
+
+
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
+
+.config(function($compileProvider){
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,6 +27,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   });
 })
+
+// var exampleApp = angular.module('starter', ['ionic', 'ngCordova'])
+
+// .run(function($ionicPlatform) {
+//   $ionicPlatform.ready(function() {
+//     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+//     // for form inputs)
+//     if (window.cordova && window.cordova.plugins.Keyboard) {
+//       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+//     }
+//     if (window.StatusBar) {
+//       // org.apache.cordova.statusbar required
+//       StatusBar.styleDefault();
+//     }
+//   });
+// });
+
 
 // exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
  
@@ -50,18 +74,18 @@ angular.module("starter").controller('PictureCtrl', function($scope, $cordovaCam
   document.addEventListener("deviceready", function () {
 
     var options = {
-      quality: 50,
+      quality: 75,
       destinationType: Camera.DestinationType.DATA_URL,
       sourceType: Camera.PictureSourceType.CAMERA,
       allowEdit: true,
       encodingType: Camera.EncodingType.JPEG,
-      targetWidth: 100,
-      targetHeight: 100,
+      targetWidth: 300 ,
+      targetHeight: 300,
       popoverOptions: CameraPopoverOptions,
       saveToPhotoAlbum: false
     };
 
-    $cordovaCamera.getPicture(options).then(function(imageData) {
+    $cordovaCamera.takePicture(options).then(function(imageData) {
       var image = document.getElementById('myImage');
       image.src = "data:image/jpeg;base64," + imageData;
     }, function(err) {
@@ -70,6 +94,8 @@ angular.module("starter").controller('PictureCtrl', function($scope, $cordovaCam
 
   }, false);
 });
+
+
 
 angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
 
