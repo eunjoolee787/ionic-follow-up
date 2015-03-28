@@ -105,6 +105,7 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
 
   .state('tab.lists', {
       url: '/lists',
+      cache: false,
       views: {
         'tab-lists': {
           templateUrl: 'templates/tab-lists.html',
