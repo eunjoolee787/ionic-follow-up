@@ -162,7 +162,7 @@
     </p>
 </div>
 
-<div class="item item-input modified-date">
+<div class="item item-input modified-date" ng-show="prospect.modifieddate > prospect.createddate">
 <span class="input-label">Modified Date</span> 
     <p>
       {{prospect.modifieddate | date: 'MM-dd-yyyy HH:mm:ss'}}
@@ -210,7 +210,7 @@
     </p>
 </div>
 
-<div class="item item-input modified-date-type">
+<div class="item item-input modified-date-type" ng-show="prospect.modifieddateType > prospect.createddate">
 <span class="input-label">Modified Date Type</span> 
     <p>
       {{prospect.modifieddateType | date: 'MM-dd-yyyy HH:mm:ss'}}
@@ -244,7 +244,7 @@
     </p>
 </div>
 
-<div class="item item-input modified-date-decision">
+<div class="item item-input modified-date-decision" ng-show="prospect.modifieddateDecision > prospect.createddate">
 <span class="input-label">Modified Date Decision</span> 
     <p>
       {{prospect.modifieddateDecision | date: 'MM-dd-yyyy HH:mm:ss'}}
