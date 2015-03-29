@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
     $scope.data = {};
  
     $scope.login = function() {
-      $http.post("http://followup.eunjoolee.com/validateUser", {username: $scope.data.username, password: $scope.data.password})
+      $http.post("http://localhost:4000/validateUser", {username: $scope.data.username, password: $scope.data.password})
         .success(function(data) {
           if(data.success)
             $state.go('tab.add');
@@ -30,7 +30,7 @@ angular.module('starter.controllers', [])
 
     app.addPerson = function (person) {
       console.log(person);
-      $http.post("http://followup.eunjoolee.com/form", person)
+      $http.post("http://localhost:4000/form", person)
         .success(function (data) {
           app.people = data;
           console.log(data);
@@ -102,7 +102,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           app.person = data;
           console.log(data);
@@ -130,7 +130,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           // app.people = data;
           app.person = data;
@@ -159,7 +159,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           // app.people = data;
           app.person = data;
