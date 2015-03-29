@@ -22,6 +22,11 @@ angular.module('starter.controllers', [])
     }
 })
 
+.controller('SessionCtrl', function($scope, Session) {
+    console.log("session");
+    
+    // $scope.sessions = Session.query();
+})
 
 //ADD
 .controller('DashCtrl', function($http, $scope) {

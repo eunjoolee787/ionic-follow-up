@@ -89,7 +89,8 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
   .state('tab', {
     url: "/tab",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/tabs.html",
+    controller: "SessionCtrl as session"
   })
 
 //TAB-ADD.HTML
