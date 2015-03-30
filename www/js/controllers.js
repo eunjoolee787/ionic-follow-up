@@ -142,6 +142,31 @@ angular.module('starter.controllers', [])
 .controller('ProspectsTypeCtrl', function($scope, $stateParams, Prospects, $http) {
   var app = this;
 
+  $scope.doRefresh = function() {
+    Prospects.get($stateParams.prospectId)
+    .then(function (response) {
+       {
+       $scope.prospect = response.data;
+        if ($scope.prospect.visit === "true"){
+         $scope.prospect.visit = true;
+       } else {
+        $scope.prospect.visit = false;
+       }
+       if ($scope.prospect.letter === "true"){
+         $scope.prospect.letter = true;
+       } else {
+        $scope.prospect.letter = false;
+       }
+       if ($scope.prospect.visitchurch === "true"){
+         $scope.prospect.visitchurch = true;
+       } else {
+        $scope.prospect.visitchurch = false;
+       }
+       $scope.$broadcast('scroll.refreshComplete');
+      }
+    });
+  };
+
   $scope.prospect = {};
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
@@ -155,6 +180,11 @@ angular.module('starter.controllers', [])
      $scope.prospect.letter = true;
    } else {
     $scope.prospect.letter = false;
+   }
+  if ($scope.prospect.visitchurch === "true"){
+     $scope.prospect.visitchurch = true;
+   } else {
+    $scope.prospect.visitchurch = false;
    }
     $scope.prospect.modifieddateType = new Date();
     console.log($scope.prospect);
