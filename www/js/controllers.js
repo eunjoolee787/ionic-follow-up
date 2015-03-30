@@ -139,33 +139,33 @@ angular.module('starter.controllers', [])
   // $scope.today = new Date();
 })
 
-.controller('ProspectsTypeCtrl', function($scope, $stateParams, Prospects, $http) {
+.controller('ProspectsTypeCtrl', function($scope, $stateParams, Prospects, $http, $ionicHistory) {
   var app = this;
 
-  $scope.doRefresh = function() {
-    Prospects.get($stateParams.prospectId)
-    .then(function (response) {
-       {
-       $scope.prospect = response.data;
-        if ($scope.prospect.visit === "true"){
-         $scope.prospect.visit = true;
-       } else {
-        $scope.prospect.visit = false;
-       }
-       if ($scope.prospect.letter === "true"){
-         $scope.prospect.letter = true;
-       } else {
-        $scope.prospect.letter = false;
-       }
-       if ($scope.prospect.visitchurch === "true"){
-         $scope.prospect.visitchurch = true;
-       } else {
-        $scope.prospect.visitchurch = false;
-       }
-       $scope.$broadcast('scroll.refreshComplete');
-      }
-    });
-  };
+  // $scope.doRefresh = function() {
+  //   Prospects.get($stateParams.prospectId)
+  //   .then(function (response) {
+  //      {
+  //      $scope.prospect = response.data;
+  //       if ($scope.prospect.visit === "true"){
+  //        $scope.prospect.visit = true;
+  //      } else {
+  //       $scope.prospect.visit = false;
+  //      }
+  //      if ($scope.prospect.letter === "true"){
+  //        $scope.prospect.letter = true;
+  //      } else {
+  //       $scope.prospect.letter = false;
+  //      }
+  //      if ($scope.prospect.visitchurch === "true"){
+  //        $scope.prospect.visitchurch = true;
+  //      } else {
+  //       $scope.prospect.visitchurch = false;
+  //      }
+  //      $scope.$broadcast('scroll.refreshComplete');
+  //     }
+  //   });
+  // };
 
   $scope.prospect = {};
   Prospects.get($stateParams.prospectId)
@@ -196,6 +196,11 @@ angular.module('starter.controllers', [])
           // app.people = data;
           app.person = data;
           console.log(data);
+        // $scope.state.go('tab.lists-detail');
+        // $ionicGoBack($event);
+        // $rootScope.$viewHistory.currentView = $rootScope.$viewHistory.backView;
+        // $state.go('tab.lists-detail');
+        $ionicHistory.goBack();
         })
         .error(function (error) {
           console.log(error);
