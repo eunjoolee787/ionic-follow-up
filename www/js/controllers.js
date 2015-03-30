@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
     $scope.data = {};
  
     $scope.login = function() {
-      $http.post("http://localhost:4000/validateUser", {username: $scope.data.username, password: $scope.data.password})
+      $http.post("http://followup.eunjoolee.com/validateUser", {username: $scope.data.username, password: $scope.data.password})
         .success(function(data) {
           if(data.success)
             $state.go('tab.add');
@@ -30,7 +30,7 @@ angular.module('starter.controllers', [])
 
     app.addPerson = function (person) {
       console.log(person);
-      $http.post("http://localhost:4000/form", person)
+      $http.post("http://followup.eunjoolee.com/form", person)
         .success(function (data) {
           app.people = data;
           console.log(data);
@@ -85,6 +85,27 @@ angular.module('starter.controllers', [])
      });
    };
 
+   // Save Export CSV File
+   $scope.exportRecord= function() {
+       var confirmPopup = $ionicPopup.confirm({
+         title: 'Export Record',
+         template: 'Are you sure you want to delete this contact?'
+     });
+     confirmPopup.then(function(res) {
+       if(res) {
+      cordova.plugins.email.open({
+      to:      'max@mustermann.de',
+      cc:      'erika@mustermann.de',
+      bcc:     ['john@doe.com', 'jane@doe.com'],
+      subject: 'Greetings',
+      body:    'How are you? Nice greetings from Leipzig'
+    });
+       } else {
+         console.log('You are not sure');
+       }
+     });
+   };
+
 })
 
 
@@ -102,7 +123,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           app.person = data;
           console.log(data);
@@ -130,7 +151,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           // app.people = data;
           app.person = data;
@@ -159,7 +180,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           // app.people = data;
           app.person = data;
