@@ -146,8 +146,18 @@ angular.module('starter.controllers', [])
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
+    if ($scope.prospect.visit === "true"){
+     $scope.prospect.visit = true;
+   } else {
+    $scope.prospect.visit = false;
+   }
+   if ($scope.prospect.letter === "true"){
+     $scope.prospect.letter = true;
+   } else {
+    $scope.prospect.letter = false;
+   }
     $scope.prospect.modifieddateType = new Date();
-    console.log(response.data);
+    console.log($scope.prospect);
   })
 
   app.editPerson = function (person) {
@@ -194,7 +204,7 @@ angular.module('starter.controllers', [])
     app.toggle = function () {
     console.log("toggle");
   }
-    $scope.today = new Date();
+    // $scope.today = new Date();
 })
 
 
