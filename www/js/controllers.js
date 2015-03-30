@@ -145,9 +145,10 @@ angular.module('starter.controllers', [])
           console.log(error);
         })
     }
-
+    // this.toggle = true;
     app.toggle = function () {
     console.log("toggle");
+    // return this.toggle;
   }
     // $scope.today = new Date();
 })

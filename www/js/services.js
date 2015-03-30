@@ -19,7 +19,7 @@ angular.module('starter.services', [])
           console.log(error);
         });
     }
-  }};
+  };
 
 })
 .factory('Prospects', function($http) {
