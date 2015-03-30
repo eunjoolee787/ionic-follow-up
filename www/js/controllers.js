@@ -111,13 +111,28 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('ProspectsEditCtrl', function($scope, $stateParams, Prospects, $http) {
+.controller('ProspectsEditCtrl', function($scope, $stateParams, Prospects, $http, $ionicHistory) {
  var app = this;
 
   $scope.prospect = {};
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
+    if ($scope.prospect.previouslysaved === "true"){
+     $scope.prospect.previouslysaved = true;
+     } else {
+      $scope.prospect.previouslysaved = false;
+     }
+      if ($scope.prospect.previouslybaptized === "true"){
+       $scope.prospect.previouslybaptized = true;
+     } else {
+      $scope.prospect.previouslybaptized = false;
+     }
+      if ($scope.prospect.joinchurch === "true"){
+       $scope.prospect.joinchurch = true;
+     } else {
+      $scope.prospect.joinchurch = false;
+     }
     $scope.prospect.modifieddate = new Date();
     console.log(response.data);
   })
@@ -127,6 +142,7 @@ angular.module('starter.controllers', [])
         .success(function (data) {
           app.person = data;
           console.log(data);
+          $ionicHistory.goBack();
         })
         .error(function (error) {
           console.log(error);
@@ -171,7 +187,7 @@ angular.module('starter.controllers', [])
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
-    if ($scope.prospect.visit === "true"){
+  if ($scope.prospect.visit === "true"){
      $scope.prospect.visit = true;
    } else {
     $scope.prospect.visit = false;
@@ -181,10 +197,20 @@ angular.module('starter.controllers', [])
    } else {
     $scope.prospect.letter = false;
    }
-  if ($scope.prospect.visitchurch === "true"){
+   if ($scope.prospect.visitchurch === "true"){
      $scope.prospect.visitchurch = true;
    } else {
     $scope.prospect.visitchurch = false;
+   }
+   if ($scope.prospect.phonecall === "true"){
+     $scope.prospect.phonecall = true;
+   } else {
+    $scope.prospect.phonecall = false;
+   }
+   if ($scope.prospect.emailed === "true"){
+     $scope.prospect.emailed = true;
+   } else {
+    $scope.prospect.emailed = false;
    }
     $scope.prospect.modifieddateType = new Date();
     console.log($scope.prospect);
@@ -213,13 +239,28 @@ angular.module('starter.controllers', [])
     // $scope.today = new Date();
 })
 
-.controller('ProspectsDecisionCtrl', function($scope, $stateParams, Prospects, $http) {
+.controller('ProspectsDecisionCtrl', function($scope, $stateParams, Prospects, $http, $ionicHistory) {
   var app = this;
 
   $scope.prospect = {};
   Prospects.get($stateParams.prospectId)
   .then(function (response) {
     $scope.prospect = response.data;
+    if ($scope.prospect.saved === "true"){
+     $scope.prospect.saved = true;
+     } else {
+      $scope.prospect.saved = false;
+     }
+    if ($scope.prospect.baptized === "true"){
+     $scope.prospect.baptized = true;
+     } else {
+      $scope.prospect.baptized = false;
+     }
+     if ($scope.prospect.joinedthechurch === "true"){
+     $scope.prospect.joinedthechurch = true;
+     } else {
+      $scope.prospect.joinedthechurch = false;
+     }
     $scope.prospect.modifieddateDecision = new Date();
     console.log(response.data);
   })
@@ -230,6 +271,7 @@ angular.module('starter.controllers', [])
           // app.people = data;
           app.person = data;
           console.log(data);
+          $ionicHistory.goBack();
         })
         .error(function (error) {
           console.log(error);
