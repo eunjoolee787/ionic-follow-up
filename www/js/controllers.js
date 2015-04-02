@@ -1,14 +1,18 @@
 angular.module('starter.controllers', [])
 
 //LOGIN
-.controller('LoginCtrl', function($scope, $ionicPopup, $state, $http) {
+.controller('LoginCtrl', function($scope, Session, $state, $ionicPopup) {
     $scope.data = {};
- 
+    $scope.login = Session.login;
     $scope.login = function() {
-      $http.post("http://localhost:4000/validateUser", {username: $scope.data.username, password: $scope.data.password})
-        .success(function(data) {
-          if(data.success)
+      Session.login ({username: $scope.data.username, password: $scope.data.password}) 
+      .success(function(data) {
+          if(data.success) {
+            console.log(Session.loggedIn);
+            Session.loggedIn = true;
             $state.go('tab.add');
+            console.log(Session.loggedIn);
+          }
           else {
             var alertPopup = $ionicPopup.alert({
               title: 'Login failed!',
@@ -22,10 +26,11 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('SessionCtrl', function($scope, Session) {
+.controller('SessionCtrl', function($scope) {
     console.log("session");
-    
-    // $scope.sessions = Session.query();
+
+    loggedIn: false,
+    $scope.data = {};
 })
 
 //ADD

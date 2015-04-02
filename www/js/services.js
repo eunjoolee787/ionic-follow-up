@@ -1,23 +1,11 @@
 angular.module('starter.services', [])
 
 .factory('Session', function($http) {
+  console.log('Session');
   return {
     loggedIn: false,
-    login: function(){
-      $http.post("http://localhost:4000/validateUser", {username: $scope.data.username, password: $scope.data.password})
-        .success(function(data) {
-          if(data.success)
-            $state.go('tab.add');
-          else {
-            var alertPopup = $ionicPopup.alert({
-              title: 'Login failed!',
-              template: 'Please check your credentials!'
-            });
-          }
-        })
-        .error(function (error) {
-          console.log(error);
-        });
+    login: function(credentials){
+      return $http.post("http://localhost:4000/validateUser", credentials);
     }
   };
 

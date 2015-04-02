@@ -5,9 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+angular.module('starter', ['ionic', 
+  'starter.controllers', 
+  'starter.services', 
+  'ngCordova', 
+  'ui.router'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $state, Session) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +23,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleDefault();
     }
   });
+
+  $rootScope.$on( '$stateChangeStart', function(e, toState  , toParams
+                                                   , fromState, fromParams) {
+        // console.log(toState);
+        var isLogin = Session.loggedIn;
+        if(isLogin){
+           return; // no need to redirect 
+        }
+
+        // now, redirect only not authenticated
+
+        // var userInfo = authenticationSvc.getUserInfo();
+
+        if(isLogin === false && toState.name != "login") {
+            e.preventDefault(); // stop current execution
+            $state.go('login'); // go to login
+        }
+    });
 })
 
 // exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
