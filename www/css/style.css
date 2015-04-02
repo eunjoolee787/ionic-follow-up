@@ -40,3 +40,21 @@ a.edit {
   float: right;
   color: black;
 }
+
+.item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
+  padding-left: 15px;
+  padding-top: 25px;
+  min-height: 60px;
+}
+
+h2.lists-name {
+  font-size: 20px;
+  font-family: helvetica;
+}
+
+p.lists-detail-name {
+  font-size: 20px;
+  font-family: helvetica;
+  padding-left: 15px;
+}
+

@@ -15,13 +15,13 @@
 <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="prospect in prospects | filter:searchText" type="item-text-wrap" href="#/tab/lists/{{prospect._id}}">
 
       <!-- TO DO -->
-        <img ng-src="{{chat.face}}">
+    <!--     <img ng-src="{{chat.face}}">
         
-        <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+        <img ng-src="{{chat.face}}" style="width: 64px; height: 64px"> -->
 
-        <h2>{{prospect.firstname}} {{prospect.lastname}}</h2>
+        <h2 class="lists-name">{{prospect.firstname}} {{prospect.lastname}}</h2>
         <!-- <h2>{{prospect.lastcontactdate | date: 'MM-dd-yyyy'}}</h2> -->
-        <p>{{chat.lastText}}</p>
+        <!-- <p>{{chat.lastText}}</p> -->
         <i class="icon ion-chevron-right icon-accessory"></i>
 
 <!--         <ion-option-button class="button-assertive" ng-click="remove(chat)">
