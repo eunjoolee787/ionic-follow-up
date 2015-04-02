@@ -89,7 +89,7 @@ angular.module('starter.controllers', [])
    $scope.exportRecord= function() {
        var confirmPopup = $ionicPopup.confirm({
          title: 'Export Record',
-         template: 'Are you sure you want to delete this contact?'
+         template: 'Are you sure you want to export this contact?'
      });
      confirmPopup.then(function(res) {
        if(res) {
