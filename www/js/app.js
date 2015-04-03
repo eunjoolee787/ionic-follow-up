@@ -43,6 +43,15 @@ angular.module('starter', ['ionic',
     });
 })
 
+// document.addEventListener('deviceready', function() {
+
+// }, false);
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+  console.log("console.log works well");
+}
+
 // exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
  
 //     $scope.takePicture = function() {
@@ -67,31 +76,31 @@ angular.module('starter', ['ionic',
  
 // });
 
-angular.module("starter").controller('PictureCtrl', function($scope, $cordovaCamera) {
+// angular.module("starter").controller('PictureCtrl', function($scope, $cordovaCamera) {
 
-  document.addEventListener("deviceready", function () {
+//   document.addEventListener("deviceready", function () {
 
-    var options = {
-      quality: 50,
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: Camera.EncodingType.JPEG,
-      targetWidth: 100,
-      targetHeight: 100,
-      popoverOptions: CameraPopoverOptions,
-      saveToPhotoAlbum: false
-    };
+//     var options = {
+//       quality: 50,
+//       destinationType: Camera.DestinationType.DATA_URL,
+//       sourceType: Camera.PictureSourceType.CAMERA,
+//       allowEdit: true,
+//       encodingType: Camera.EncodingType.JPEG,
+//       targetWidth: 100,
+//       targetHeight: 100,
+//       popoverOptions: CameraPopoverOptions,
+//       saveToPhotoAlbum: false
+//     };
 
-    $cordovaCamera.getPicture(options).then(function(imageData) {
-      var image = document.getElementById('myImage');
-      image.src = "data:image/jpeg;base64," + imageData;
-    }, function(err) {
-      // error
-    });
+//     $cordovaCamera.getPicture(options).then(function(imageData) {
+//       var image = document.getElementById('myImage');
+//       image.src = "data:image/jpeg;base64," + imageData;
+//     }, function(err) {
+//       // error
+//     });
 
-  }, false);
-});
+//   }, false);
+// });
 
 angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
 
@@ -190,4 +199,5 @@ angular.module("starter").config(function($stateProvider, $urlRouterProvider) {
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login'); // /tab/dash
+
 });

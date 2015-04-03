@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
 
     app.addPerson = function (person) {
       console.log(person);
-      $http.post("http://localhost:4000/form", person)
+      $http.post("http://followup.eunjoolee.com/form", person)
         .success(function (data) {
           app.people = data;
           console.log(data);
@@ -87,6 +87,7 @@ angular.module('starter.controllers', [])
        template: 'Are you sure you want to delete this contact?'
      });
      confirmPopup.then(function(res) {
+      console.log(res);
        if(res) {
          Prospects.delete($stateParams.prospectId)
        } else {
@@ -103,18 +104,48 @@ angular.module('starter.controllers', [])
      });
      confirmPopup.then(function(res) {
        if(res) {
+    //   cordova.plugins.email.open({
+    //   to:      'max@mustermann.de',
+    //   cc:      'erika@mustermann.de',
+    //   bcc:     ['john@doe.com', 'jane@doe.com'],
+    //   subject: 'Greetings',
+    //   body:    'How are you? Nice greetings from Leipzig'
+    // });
       cordova.plugins.email.open({
-      to:      'max@mustermann.de',
-      cc:      'erika@mustermann.de',
-      bcc:     ['john@doe.com', 'jane@doe.com'],
-      subject: 'Greetings',
-      body:    'How are you? Nice greetings from Leipzig'
-    });
+        subject:     'Cordova Icon',
+        attachments: 'base64:icon.png//iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/...'
+      });
+
        } else {
          console.log('You are not sure');
        }
      });
    };
+
+
+   // $scope.exportRecord = function() {
+   //  subject: "Display contact",
+   //  to:[$scope.sendEmailname],
+   //  attachements: [$scope.prospectId]
+   // },
+   // function() {
+   //  console.log('email view dismissed');
+   // },
+   // this
+   // );
+
+  // $http({method: 'GET', url:"http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId})
+  //   .success(function(data, status, headers, config) {
+  //     var element = angular.element('<a/>');
+  //     element.attr({
+  //       href: 'data:attachment/csv;charset=utf-8,' + encodeURI(data),
+  //       target: '_blank',
+  //       download: 'filename.csv'
+  //     })[0].click();
+  //   }).
+  //   error(function(data, status, headers, config) {
+
+  //   });
 
 })
 
@@ -148,7 +179,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           app.person = data;
           console.log(data);
@@ -227,7 +258,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           // app.people = data;
           app.person = data;
@@ -277,7 +308,7 @@ angular.module('starter.controllers', [])
   })
 
   app.editPerson = function (person) {
-      $http.put("http://localhost:4000/prospects/"+$stateParams.prospectId, person)
+      $http.put("http://followup.eunjoolee.com/prospects/"+$stateParams.prospectId, person)
         .success(function (data) {
           // app.people = data;
           app.person = data;

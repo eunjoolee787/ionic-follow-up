@@ -255,7 +255,10 @@
   <a class="edit" href="#tab/lists/{{prospect._id}}/export"><button class="button button-icon icon ion-edit"></button></a>
 </div> -->
 <!-- SAVE EXPORT CSV FILE -->
-<button class="button button-block button-balanced" ng-click="exportRecord()">
+<!-- <button class="button button-block button-balanced" ng-click="exportRecord()">
+ Export
+</button> -->
+<button class="button button-block button-balanced" ng-click="exportRecord()" ng-href="{{csv_link}}">
  Export
 </button>
 
