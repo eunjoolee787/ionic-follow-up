@@ -7,7 +7,7 @@
 
 
 
-<ion-view view-title="Lists Detail">
+<ion-view view-title="LISTS DETAIL">
   <ion-content class="padding">
 
 <!--   <img ng-src="{{chat.face}}" style="width: 64px; height: 64px"> -->
@@ -157,8 +157,11 @@
 
 <div class="item item-input modified-date" ng-show="prospect.modifieddate > prospect.createddate">
 <span class="input-label">Modified Date</span> 
-    <p>
+<!--     <p>
       {{prospect.modifieddate | date: 'MM-dd-yyyy HH:mm:ss'}}
+    </p> -->
+    <p>
+      {{prospect.modifieddate | date: 'MM-dd-yyyy'}}
     </p>
 </div>
 
@@ -205,8 +208,11 @@
 
 <div class="item item-input modified-date-type" ng-show="prospect.modifieddateType > prospect.createddate">
 <span class="input-label">Modified Date Type</span> 
-    <p>
+<!--     <p>
       {{prospect.modifieddateType | date: 'MM-dd-yyyy HH:mm:ss'}}
+    </p> -->
+    <p>
+      {{prospect.modifieddateType | date: 'MM-dd-yyyy'}}
     </p>
 </div>
 
@@ -239,8 +245,11 @@
 
 <div class="item item-input modified-date-decision" ng-show="prospect.modifieddateDecision > prospect.createddate">
 <span class="input-label">Modified Date Decision</span> 
-    <p>
+<!--     <p>
       {{prospect.modifieddateDecision | date: 'MM-dd-yyyy HH:mm:ss'}}
+    </p> -->
+    <p>
+      {{prospect.modifieddateDecision | date: 'MM-dd-yyyy'}}
     </p>
 </div>
 
@@ -259,7 +268,7 @@
  Export
 </button> -->
 <button class="button button-block button-balanced" ng-click="exportRecord()" ng-href="{{csv_link}}">
- Export
+ Email CSV File
 </button>
 
     

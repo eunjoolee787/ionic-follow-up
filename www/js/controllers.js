@@ -99,8 +99,8 @@ angular.module('starter.controllers', [])
    // Save Export CSV File
    $scope.exportRecord= function() {
        var confirmPopup = $ionicPopup.confirm({
-         title: 'Export Record',
-         template: 'Are you sure you want to export this contact?'
+         title: 'Email CSV File',
+         template: 'Are you sure you want to email this contact?'
      });
      confirmPopup.then(function(res) {
        if(res) {
