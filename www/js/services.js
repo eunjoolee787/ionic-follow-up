@@ -5,7 +5,7 @@ angular.module('starter.services', [])
   return {
     loggedIn: false,
     login: function(credentials){
-      return $http.post("http://followup.eunjoolee.com/validateUser", credentials);
+      return $http.post("http://localhost:4000/validateUser", credentials);
     }
   };
 
@@ -14,17 +14,17 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return $http.get("http://followup.eunjoolee.com/prospects");
+      return $http.get("http://localhost:4000/prospects");
 
     },
     remove: function(prospect) {
       prospects.splice(prospects.indexOf(prospect), 1);
     },
     get: function(prospectId) {
-      return $http.get("http://followup.eunjoolee.com/prospects/"+prospectId);
+      return $http.get("http://localhost:4000/prospects/"+prospectId);
     },
     delete: function(prospectId) {
-      return $http.delete("http://followup.eunjoolee.com/prospects/"+prospectId);
+      return $http.delete("http://localhost:4000/prospects/"+prospectId);
     }
   };
 });
